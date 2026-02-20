@@ -1,0 +1,29 @@
+.container {
+  max-width: 1188px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.text {
+  text-align: center;
+  width: 50%;
+}
+.text h3 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #282828;
+  margin-bottom: 50px;
+}
+.text button{
+    width: 361px;
+    height: 75px;
+    background-color: #D8FFE1;
+    border-radius: 16px;
+    padding: 8px;
+    margin: 8px;
+    color: #28A745;
+    font-size: 28px;
+    font-weight: 500;
+    border: none;
+}

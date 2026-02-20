@@ -1,3 +1,18 @@
+@font-face {
+  font-family: Vazir;
+  src: url("../assets/fonts/vazirfonts/Vazir-Medium-FD-WOL.eot");
+  src:
+    url("../assets/fonts/vazirfonts/Vazir-Medium-FD-WOL.eot")
+      format("embedded-opentype"),
+    url("../assets/fonts/vazirfonts/Vazir-Medium-FD-WOL.woff") format("woff"),
+    url("../assets/fonts/vazirfonts/Vazir-Medium-FD-WOL.woff2") format("woff"),
+    url("../assets/fonts/vazirfonts/Vazir-Medium-FD-WOL.ttf") format("truetype");
+  font-weight: normal;
+}
+.vazirFont {
+  font-family: Vazir;
+}
+
 html,
 body {
   padding: 0;

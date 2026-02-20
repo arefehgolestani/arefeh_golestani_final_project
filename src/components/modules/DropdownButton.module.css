@@ -1,0 +1,88 @@
+@font-face {
+  font-family: Vazir;
+  src: url("../../assets/fonts/vazirfonts/Vazir-Medium-FD-WOL.eot");
+  src:
+    url("../../assets/fonts/vazirfonts/Vazir-Medium-FD-WOL.eot")
+      format("embedded-opentype"),
+    url("../../assets/fonts/vazirfonts/Vazir-Medium-FD-WOL.woff") format("woff"),
+    url("../../assets/fonts/vazirfonts/Vazir-Medium-FD-WOL.woff2")
+      format("woff"),
+    url("../../assets/fonts/vazirfonts/Vazir-Medium-FD-WOL.ttf")
+      format("truetype");
+  font-weight: normal;
+}
+.vazirFont {
+  font-family: Vazir;
+}
+.container {
+  position: relative;
+}
+
+.dropdown {
+  color: #28a745;
+  border: none !important;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.dropdown span {
+  font-size: 18px;
+  font-weight: 500;
+}
+.dropdownBox {
+  width: 246px;
+  height: 151px;
+  border-radius: 11px;
+  background-color: #fff;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10px;
+}
+.dropdownBox div {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  align-items: center;
+}
+.phoneNumber {
+  height: 48px;
+  background-color: #f4f4f4;
+  padding: 0 15px;
+  border-top-right-radius: 11px;
+  border-top-left-radius: 11px;
+}
+.phoneNumber div {
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  padding-left: 1px;
+  justify-content: center;
+}
+.phoneNumber span {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.profile {
+  height: 50px;
+  margin: 0 15px;
+  border-bottom: 1px solid #0000001f;
+}
+.profile a{
+  font-size: 14px;
+  font-weight: 400;
+}
+.logOut {
+  height: 50px;
+  margin: 0 15px;
+}
+.logOut a{
+  font-size: 14px;
+  font-weight: 400;
+  color: #D40000;
+}

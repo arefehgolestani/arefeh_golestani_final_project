@@ -9,6 +9,7 @@ import TourContext from "@/context/TourContext";
 import Modal from "../templates/Modal";
 import LoginForm from "../modules/LoginForm";
 import MobileCodeForm from "./MobileCodeForm";
+import DropdownButton from "./DropdownButton"
 import api from "@/services/config";
 import { sendOtp, checkOtp } from "@/services/EndpointApi";
 
@@ -149,7 +150,7 @@ function Header() {
               <span>ورود | ثبت نام</span>
             </button>
           )}
-          {isLoggedIn && <span>{mobile}</span>}
+          {isLoggedIn && <DropdownButton /> }
         </div>
       </div>
 
