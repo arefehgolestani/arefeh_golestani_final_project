@@ -30,6 +30,7 @@ export async function POST(request) {
     secure: false,
     sameSite: "strict",
     path: "/",
+    maxAge: 60 * 60 * 24 * 30 * 12,
   });
 
   return Response.json({

@@ -7,7 +7,7 @@ function FooterClient() {
     <div className={styles.footerLogo}>
       <Image src="/images/logo.png" width={146} height={44} alt="torino logo" />
 
-      <p>تلفن پشتیبانی : 8574-021</p>
+      <p className="vazirFont">تلفن پشتیبانی : 8574-021</p>
       <div className={styles.footerClient}>
         <Image
           src="/images/client1.png"

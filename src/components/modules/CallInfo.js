@@ -21,7 +21,7 @@ function CallInfo() {
       </div>
       <div className={styles.phon}>
         <div>
-          <button>021-1840</button>
+          <button className="vazirFont">021-1840</button>
           <Image
             src="/images/call.png"
             width={24}

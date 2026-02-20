@@ -1,25 +1,30 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
 import TourContext from "./TourContext.jsx";
 
 function TourProvider({ children }) {
   const [modal, setModal] = useState(null);
   const [mobile, setMobile] = useState("");
   const [otp, setOtp] = useState("");
-  const [user, setUser] = useState({
-    id: "",
-    firstName: "",
-    lastName: "",
-    mobile: "",
-    email: "",
-  });
+  const [user, setUser] = useState(null);
+  //   const [user, setUser] = useState({
+  //   id: "",
+  //   firstName: "",
+  //   lastName: "",
+  //   mobile: "",
+  //   email: "",
+  // });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isAuthChecked, setIsAuthChecked] = useState(false);
+
   useEffect(() => {
     const checkLogin = async () => {
       try {
-        const res = await fetch("/api/auth/user");
+        const res = await fetch("/api/auth/user", {
+          cache: "no-store",
+        });
+
         const data = await res.json();
 
         if (res.ok && data.user) {
@@ -28,6 +33,8 @@ function TourProvider({ children }) {
         }
       } catch (error) {
         console.log("Not logged in");
+      } finally {
+        setIsAuthChecked(true);
       }
     };
 
@@ -47,6 +54,7 @@ function TourProvider({ children }) {
         setUser,
         isLoggedIn,
         setIsLoggedIn,
+        isAuthChecked,
       }}
     >
       {children}

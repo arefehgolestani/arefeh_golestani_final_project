@@ -4,17 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { useContext, useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
-
 import TourContext from "@/context/TourContext";
 import Modal from "../templates/Modal";
 import LoginForm from "../modules/LoginForm";
 import MobileCodeForm from "./MobileCodeForm";
 import DropdownButton from "./DropdownButton";
 import api from "@/services/config";
-import { sendOtp, checkOtp } from "@/services/EndpointApi";
+import { sendOtp } from "@/services/EndpointApi";
 
 import styles from "./Header.module.css";
-import { useRouter } from "next/navigation";
+
 
 function Header() {
   const {
@@ -27,6 +26,7 @@ function Header() {
     isLoggedIn,
     setIsLoggedIn,
     setUser,
+    isAuthChecked,
   } = useContext(TourContext);
 
   const notify = (code) => toast(`کد تایید شما : ${code}`);
@@ -153,8 +153,7 @@ function Header() {
           </ul>
         </div>
         <div className={styles.loginButton}>
-          {isLoggedIn && <DropdownButton />}
-          {!isLoggedIn && (
+          {!isAuthChecked ? null : !isLoggedIn ? (
             <button onClick={modalHandler}>
               <Image
                 src="/images/profile.png"
@@ -164,6 +163,8 @@ function Header() {
               />
               <span>ورود | ثبت نام</span>
             </button>
+          ) : (
+            <DropdownButton />
           )}
         </div>
       </div>
