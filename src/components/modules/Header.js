@@ -9,7 +9,7 @@ import TourContext from "@/context/TourContext";
 import Modal from "../templates/Modal";
 import LoginForm from "../modules/LoginForm";
 import MobileCodeForm from "./MobileCodeForm";
-import DropdownButton from "./DropdownButton"
+import DropdownButton from "./DropdownButton";
 import api from "@/services/config";
 import { sendOtp, checkOtp } from "@/services/EndpointApi";
 
@@ -26,6 +26,7 @@ function Header() {
     setOtp,
     isLoggedIn,
     setIsLoggedIn,
+    setUser,
   } = useContext(TourContext);
 
   const notify = (code) => toast(`کد تایید شما : ${code}`);
@@ -75,22 +76,35 @@ function Header() {
     }
 
     try {
-      const res = await api.post(checkOtp, {
-        mobile,
-        code: otp,
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        body: JSON.stringify({
+          mobile,
+          code: otp,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
       });
+      const data = await res.json();
 
-      if (res.status === 200) {
+      if (res.ok) {
+        setUser((prev) => ({
+          ...prev,
+          ...data.user,
+        }));
+
+        setIsLoggedIn(true);
         setModal(null);
         toast.success("ورود به تورینو با موفقیت انجام شد.");
-        setIsLoggedIn(true);
-        console.log(res.data.accessToken);
-        console.log(res.data.refreshToken);
-        console.log(res.data.user);
       }
     } catch (error) {
-      const message = error.response?.data?.message;
-      toast.error(message || "خطایی رخ داد");
+      const data = await res.json();
+
+      if (!res.ok) {
+        toast.error(data.message || "خطایی رخ داد");
+        return;
+      }
       setOtp("");
     }
   };
@@ -139,6 +153,7 @@ function Header() {
           </ul>
         </div>
         <div className={styles.loginButton}>
+          {isLoggedIn && <DropdownButton />}
           {!isLoggedIn && (
             <button onClick={modalHandler}>
               <Image
@@ -150,7 +165,6 @@ function Header() {
               <span>ورود | ثبت نام</span>
             </button>
           )}
-          {isLoggedIn && <DropdownButton /> }
         </div>
       </div>
 

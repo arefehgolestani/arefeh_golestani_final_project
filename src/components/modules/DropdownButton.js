@@ -1,24 +1,50 @@
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import TourContext from "@/context/TourContext";
 import Image from "next/image";
 
 import styles from "./DropdownButton.module.css";
 
 function DropdownButton() {
-  const { mobile } = useContext(TourContext);
+  const { user, setUser, setIsLoggedIn } = useContext(TourContext);
 
   const [isShow, setIsShow] = useState(false);
+  const dropdownRef = useRef(null);
 
   const dropdownHandler = () => {
     setIsShow((isShow) => !isShow);
   };
-//   window.onclick = () => {
-//     setIsShow(false);
-//   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsShow(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const router = useRouter();
+
+  const logoutHandler = async () => {
+    await fetch("/api/auth/logout", {
+      method: "POST",
+    });
+
+    setUser(null);
+    setIsLoggedIn(false);
+    router.refresh();
+    router.push("/");
+  };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={dropdownRef}>
       <button className={styles.dropdown} onClick={dropdownHandler}>
         <Image
           src="/images/profile.png"
@@ -26,7 +52,7 @@ function DropdownButton() {
           height={20}
           alt="login icon"
         />
-        <span className={styles.vazirFont}>{mobile}</span>
+        <span className={styles.vazirFont}>{user.mobile}</span>
         <Image
           src="/images/arrow-down.png"
           width={20}
@@ -46,7 +72,7 @@ function DropdownButton() {
               />
             </div>
 
-            <span className={styles.vazirFont}>{mobile}</span>
+            <span className={styles.vazirFont}>{user.mobile}</span>
           </div>
           <div className={styles.profile}>
             <div>
@@ -68,7 +94,7 @@ function DropdownButton() {
                 alt="logout icon"
               />
             </div>
-            <Link href="/profile">خروج از حساب کاربری</Link>
+            <button onClick={logoutHandler}>خروج از حساب کاربری</button>
           </div>
         </div>
       )}
