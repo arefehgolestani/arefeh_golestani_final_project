@@ -1,0 +1,39 @@
+.modalForm button {
+  width: 45%;
+  padding: 10px 20px;
+  margin: 10px 0 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  width: 100% !important;
+  display: block !important;
+}
+.modalForm label {
+  text-align: right;
+  font-size: 16px;
+  color: #000000;
+  
+}
+.modalForm input {
+  padding: 8px;
+  border-radius: 6px;
+  height: 54px;
+  width: 100%;
+  text-align: right;
+  border: 1px solid #00000040;
+  margin-top: 15px;
+}
+.success {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  width: 100% !important;
+  display: block !important;
+  padding: 8px;
+}
+.error {
+  color: #f43f5e;
+}

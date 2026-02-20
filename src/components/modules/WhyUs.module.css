@@ -1,0 +1,17 @@
+.container{
+    max-width: 1188px;
+    margin: 100px auto 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+.container div{
+    width: 48%;
+}
+.sliderText{
+    text-align: justify;
+}
+.sliderImage{
+    text-align: center;
+}

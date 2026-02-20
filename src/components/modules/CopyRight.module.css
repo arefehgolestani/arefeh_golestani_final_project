@@ -1,0 +1,10 @@
+.copyRight {
+  max-width: 1188px;
+  margin: 15px auto;
+}
+.copyRight p {
+  font-size: 15px;
+  font-weight: 400;
+  color: #000000;
+  text-align: center;
+}

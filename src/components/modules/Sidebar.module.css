@@ -1,0 +1,24 @@
+.sidebar {
+  width: 285px;
+  height: 170px;
+  border-radius: 10px;
+  border: 1px solid #00000033;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar div a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 56px;
+  gap: 8px;
+  border-bottom: 1px solid #00000033;
+}
+.transaction{
+  border-bottom: none !important;
+}
+.sidebar div p {
+  font-size: 15px;
+  font-weight: 400;
+}

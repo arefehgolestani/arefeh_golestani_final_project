@@ -1,0 +1,15 @@
+.container {
+  border-bottom: 1px solid #00000033;
+}
+.footer {
+  max-width: 1188px;
+  margin: 20px auto 0;
+  border-top: 1px solid #00000033;
+}
+
+.footerBottom {
+  padding: 20px 0;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}

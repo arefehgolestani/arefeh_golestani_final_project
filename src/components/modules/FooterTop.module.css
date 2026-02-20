@@ -1,0 +1,31 @@
+.container {
+  border-top: 1px solid #00000033;
+}
+.footerTop {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px 0px;
+  gap: 35px;
+  max-width: 1188px;
+  margin: 0 auto;
+}
+.footerInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+.footerInfo img {
+  width: 100%;
+  height: auto;
+}
+.footerInfoText h4 {
+  font-size: 26px;
+  font-weight: 500;
+  color: #282828;
+}
+.footerInfoText p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #282828;
+}

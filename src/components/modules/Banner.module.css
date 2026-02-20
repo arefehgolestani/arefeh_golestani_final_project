@@ -1,0 +1,15 @@
+.container img {
+  width: 100%;
+  height: auto;
+}
+.text {
+  text-align: center;
+  padding: 15px 0 32px;
+}
+.text h1{
+  font-size: 28px;
+  font-weight: 600;
+}
+.text span {
+  color: #28a745;
+}
