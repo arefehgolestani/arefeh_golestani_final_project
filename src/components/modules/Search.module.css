@@ -49,15 +49,49 @@
   height: 51px;
 }
 .datepickerInput input {
- width: 215px !important;
-    background-color: transparent !important;
-    padding: 0px 30px 0 0 !important;
-    height: 28px !important;
-    left: 36px !important;
-    position: relative !important;
+  width: 215px !important;
+  background-color: transparent !important;
+  padding: 0px 30px 0 0 !important;
+  height: 28px !important;
+  left: 36px !important;
+  position: relative !important;
 }
-.css-137m4ck {
-  margin-top: 20px;
-  left: 28px;
-  border-radius: 14px !important;
+
+@media (max-width: 767px) {
+  .search {
+    border: none;
+    margin: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+    gap: 5px;
+  }
+  .divider {
+    display: none !important;
+  }
+  .search div {
+    width: 160px;
+    height: 47px;
+    text-align: center;
+    border: 1px solid #00000026;
+    border-radius: 12px;
+    padding: 8px;
+    gap: 8px;
+    text-align: center;
+  }
+  .search div input {
+    width: 100%;
+  }
+  .datepickerInput {
+    width: 328px !important;
+  }
+  .button {
+    border: none !important;
+    width: 328px !important;
+  }
+  .button button {
+    width: 100% !important;
+    height: 47px !important;
+  }
 }

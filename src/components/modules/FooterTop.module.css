@@ -29,3 +29,30 @@
   font-weight: 300;
   color: #282828;
 }
+
+@media (max-width: 767px) {
+  .container {
+    margin: 25px;
+  }
+  .footerTop {
+    flex-direction: column;
+    padding: 20px 0 0px;
+    gap: 20px;
+  }
+  .footerInfo {
+    justify-content: flex-start;
+  }
+  .footerInfo div img {
+    width: 71.5px;
+    height: 64px;
+  }
+  .footerInfoText h4 {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .footerInfoText p {
+    font-size: 12px;
+    font-weight: 300px;
+    padding-top: 5px;
+  }
+}

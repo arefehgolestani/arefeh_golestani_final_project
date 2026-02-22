@@ -7,11 +7,13 @@ function CallInfo() {
     <div className={styles.container}>
       <div className={styles.image}>
         <div className={styles.text}>
-            <h3>خرید تلفنی از <span>تورینو</span></h3>
-            <h4>به هر کجا که میخواهید !</h4>
+          <h3>
+            خرید تلفنی از <span> تورینو </span>
+          </h3>
+          <h4>به هر کجا که میخواهید !</h4>
         </div>
         <div className={styles.cartImage}>
-            <Image
+          <Image
             src="/images/cart.png"
             width={308}
             height={225}
@@ -19,7 +21,7 @@ function CallInfo() {
           />
         </div>
       </div>
-      <div className={styles.phon}>
+      <div className={styles.phone}>
         <div>
           <button className="vazirFont">021-1840</button>
           <Image

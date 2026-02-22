@@ -50,7 +50,7 @@ function Search() {
           range
         />
       </div>
-      <div>
+      <div className={styles.button}>
         <button>جستجو</button>
       </div>
     </div>

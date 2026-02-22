@@ -14,7 +14,7 @@
   display: flex;
   justify-content: space-between;
 }
-.phon {
+.phone {
   display: flex;
   align-items: center;
   text-align: center;
@@ -23,13 +23,13 @@
   width: 25%;
   height: 250px;
 }
-.phon div {
+.phone div {
   display: flex;
   vertical-align: middle;
   align-items: center;
   text-align: center;
 }
-.phon div button {
+.phone div button {
   padding: 8px;
   width: 159px;
   height: 60px;
@@ -59,20 +59,75 @@
   bottom: 0;
   left: 25px;
 }
-.text{
-    padding: 40px 50px;
+.text {
+  padding: 40px 50px;
 }
-.text h3{
-    font-size: 48px;
-    font-weight: 700;
-    color: #fff;
+.text h3 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
 }
-.text span{
-    color: #10411b;
+.text span {
+  color: #10411b;
 }
-.text h4{
-    font-size: 32px;
-    font-weight: 300;
-    color: #FFFFFF;
-;
+.text h4 {
+  font-size: 32px;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    margin: 25px;
+  }
+  .image {
+    width: 100%;
+    height: 130px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .cartImage img {
+    width: 195px;
+    height: 158px;
+    left: 0;
+  }
+  .text {
+    padding: 15px 10px;
+  }
+  .text h3 {
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .text h3 span {
+    margin-right: 2px;
+  }
+  .text h4 {
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 10px;
+  }
+  .phone {
+    flex-direction: initial;
+    justify-content: space-around;
+    width: 100%;
+    height: 70px;
+  }
+  .phone div{
+    width: 124px;
+    justify-content: flex-start;
+  }
+  .phone div button {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .phone button{
+    width: 136px;
+    height: 38px;
+    font-size: 14px;
+    font-weight: 500;
+  }
 }

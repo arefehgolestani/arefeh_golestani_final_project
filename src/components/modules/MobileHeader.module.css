@@ -8,6 +8,9 @@
   background-color: transparent;
   border: none;
 }
+.header img {
+  vertical-align: middle;
+}
 .register button {
   width: 40px;
   height: 40px;

@@ -10,6 +10,9 @@
 }
 
 @media (max-width: 767px) {
+  .copyRight {
+    margin: 0px 0 10px;
+  }
   .copyRight p {
     font-size: 12px;
     font-weight: 300;
