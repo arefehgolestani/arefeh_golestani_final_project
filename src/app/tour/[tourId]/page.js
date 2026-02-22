@@ -14,7 +14,9 @@ export async function generateStaticParams() {
 }
 
 async function TourDetailsPage({ params }) {
-  const res = await fetch(`http://localhost:6500/tour/${params.tourId}`);
+  const res = await fetch(`http://localhost:6500/tour/${params.tourId}`, {
+    cache: "no-store",
+  });
   const data = await res.json();
   console.log(data);
 

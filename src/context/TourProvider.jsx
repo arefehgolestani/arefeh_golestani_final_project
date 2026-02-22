@@ -17,6 +17,7 @@ function TourProvider({ children }) {
   // });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAuthChecked, setIsAuthChecked] = useState(false);
+   const [showSidebar, setShowSidebar] = useState(false);
 
   useEffect(() => {
     const checkLogin = async () => {
@@ -55,6 +56,8 @@ function TourProvider({ children }) {
         isLoggedIn,
         setIsLoggedIn,
         isAuthChecked,
+        showSidebar,
+        setShowSidebar
       }}
     >
       {children}

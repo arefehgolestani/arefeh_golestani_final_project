@@ -19,7 +19,8 @@
     "react-icons": "^5.5.0",
     "react-otp-input": "^3.1.1",
     "react-toastify": "^11.0.5",
-    "yup": "^1.7.1"
+    "yup": "^1.7.1",
+    "zaman": "^2.1.1"
   },
   "devDependencies": {
     "eslint": "^8",

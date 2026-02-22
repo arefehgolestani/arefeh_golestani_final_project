@@ -15,15 +15,41 @@
   color: #282828;
   margin-bottom: 50px;
 }
-.text button{
-    width: 361px;
-    height: 75px;
-    background-color: #D8FFE1;
-    border-radius: 16px;
-    padding: 8px;
-    margin: 8px;
-    color: #28A745;
-    font-size: 28px;
-    font-weight: 500;
-    border: none;
+.text button {
+  width: 361px;
+  height: 75px;
+  background-color: #d8ffe1;
+  border-radius: 16px;
+  padding: 8px;
+  margin: 8px;
+  color: #28a745;
+  font-size: 28px;
+  font-weight: 500;
+  border: none;
+}
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+  .container img {
+    width: 322px !important;
+    height: 322px !important;
+    margin: 15px auto;
+  }
+  .text {
+    width: 100%;
+    margin-top: -40px;
+  }
+  .text h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .text button {
+    width: 232px;
+    height: 58px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 75px;
+  }
 }

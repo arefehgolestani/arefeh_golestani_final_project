@@ -1,13 +1,18 @@
+"use client";
+
 import Link from "next/link";
 import { useContext, useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
+
 import TourContext from "@/context/TourContext";
 import Image from "next/image";
+import Modal from "../templates/Modal";
 
 import styles from "./DropdownButton.module.css";
 
 function DropdownButton() {
-  const { user, setUser, setIsLoggedIn } = useContext(TourContext);
+  const { user, setUser, setIsLoggedIn, modal, setModal } =
+    useContext(TourContext);
 
   const [isShow, setIsShow] = useState(false);
   const dropdownRef = useRef(null);
@@ -22,9 +27,7 @@ function DropdownButton() {
         setIsShow(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -32,13 +35,25 @@ function DropdownButton() {
 
   const router = useRouter();
 
+  const modalHandler = () => {
+    setModal({
+      title: "خروج از حساب کاربری",
+      message: "آیا برای خروج از حساب کاربری اطمینان دارید؟",
+      mode: "logout",
+      onConfirm: logoutHandler,
+      confirmText: "تایید و خروج ",
+    });
+  };
+
   const logoutHandler = async () => {
     await fetch("/api/auth/logout", {
       method: "POST",
     });
 
+    setModal(null);
     setUser(null);
     setIsLoggedIn(false);
+
     router.refresh();
     router.push("/");
   };
@@ -94,9 +109,23 @@ function DropdownButton() {
                 alt="logout icon"
               />
             </div>
-            <button onClick={logoutHandler}>خروج از حساب کاربری</button>
+            <button onClick={modalHandler}>خروج از حساب کاربری</button>
           </div>
         </div>
+      )}
+
+      {modal && (
+        <Modal
+          title={modal.title}
+          mode={modal.mode}
+          message={modal.message}
+          confirmText={modal.confirmText}
+          cancelText={modal.cancelText}
+          onConfirm={modal.onConfirm}
+          onCancel={() => setModal(null)}
+        >
+          {modal.children}
+        </Modal>
       )}
     </div>
   );

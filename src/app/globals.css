@@ -43,6 +43,9 @@ button {
 input {
   padding: 0 10px;
 }
+.active {
+  color: #28a745 !important;
+}
 .error {
   color: #f43f5e;
 }
@@ -95,4 +98,7 @@ table tbody tr td button {
   border: none;
   background-color: transparent;
   margin: 10px;
+}
+.myDatePicker {
+  border-radius: 20px;
 }

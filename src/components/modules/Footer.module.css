@@ -13,3 +13,14 @@
   gap: 10px;
   justify-content: space-between;
 }
+
+@media (max-width: 767px) {
+  .footer {
+    border-top: 2px dashed #00000033;
+    margin: 25px 25px 0;
+  }
+  .footerBottom {
+    flex-wrap: wrap !important;
+    padding: 20px 0 15px;
+  }
+}

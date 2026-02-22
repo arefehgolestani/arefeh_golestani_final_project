@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import styles from "./TourDetails.module.css";
+import { formattedDate, calculateDuration } from "../../services/convertDate";
 
 function TourDetails({ data }) {
   const {
@@ -15,6 +16,13 @@ function TourDetails({ data }) {
     capacity,
     insurance,
   } = data;
+
+  const { days, nights } = calculateDuration(
+  data.startDate,
+  data.endDate
+);
+
+  
   return (
     <div className={styles.container}>
       <div className={styles.details}>
@@ -24,7 +32,7 @@ function TourDetails({ data }) {
           </div>
           <div className={styles.tourDesc}>
             <h2>{title}</h2>
-            <p className="vazirFont">5 روز و 4 شب </p>
+            <p className="vazirFont">{days} روز و {nights} شب </p>
             <div className={styles.option}>
               <div>
                 <Image
@@ -89,7 +97,7 @@ function TourDetails({ data }) {
               />
               <span>تاریخ رفت </span>
             </div>
-            <h5 className="vazirFont">{startDate}</h5>
+            <h5 className="vazirFont">{formattedDate(startDate)}</h5>
           </div>
           <div className={styles.divider}></div>
           <div>
@@ -102,7 +110,7 @@ function TourDetails({ data }) {
               />
               <span>تاریخ برگشت</span>
             </div>
-            <h5 className="vazirFont">{endDate}</h5>
+            <h5 className="vazirFont">{formattedDate(endDate)}</h5>
           </div>
           <div className={styles.divider}></div>
           <div>
@@ -144,7 +152,9 @@ function TourDetails({ data }) {
             </div>
             {fleetVehicle === "ship" && <h5 className="vazirFont">کشتی</h5>}
             {fleetVehicle === "bus" && <h5 className="vazirFont">اتوبوس</h5>}
-            {fleetVehicle === "airplane" && <h5 className="vazirFont">هواپیما</h5>}
+            {fleetVehicle === "airplane" && (
+              <h5 className="vazirFont">هواپیما</h5>
+            )}
             {fleetVehicle === "train" && <h5 className="vazirFont">قطار</h5>}
             {fleetVehicle === "SUV" && <h5 className="vazirFont">SUV</h5>}
           </div>
@@ -172,7 +182,11 @@ function TourDetails({ data }) {
               />
               <span>بیمه</span>
             </div>
-            {insurance ? <h5 className="vazirFont">بیمه 50 هزار دیناری</h5> : <h5>ندارد</h5>}
+            {insurance ? (
+              <h5 className="vazirFont">بیمه 50 هزار دیناری</h5>
+            ) : (
+              <h5>ندارد</h5>
+            )}
           </div>
         </div>
       </div>

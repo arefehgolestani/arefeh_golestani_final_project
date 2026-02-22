@@ -13,6 +13,7 @@ import api from "@/services/config";
 import { sendOtp } from "@/services/EndpointApi";
 
 import styles from "./Header.module.css";
+import MobileHeader from "./MobileHeader";
 
 
 function Header() {
@@ -28,6 +29,8 @@ function Header() {
     setUser,
     isAuthChecked,
   } = useContext(TourContext);
+
+
 
   const notify = (code) => toast(`کد تایید شما : ${code}`);
 
@@ -131,7 +134,7 @@ function Header() {
   return (
     <div className={styles.mainHeader}>
       <div>
-        <ToastContainer autoClose={7000} />
+        <ToastContainer autoClose={6000} />
       </div>
       <div className={styles.container}>
         <div>
@@ -167,6 +170,9 @@ function Header() {
             <DropdownButton />
           )}
         </div>
+      </div>
+      <div className={styles.mobileHeader}>
+         <MobileHeader />
       </div>
 
       {modal && (

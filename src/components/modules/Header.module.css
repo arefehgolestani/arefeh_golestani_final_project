@@ -41,3 +41,17 @@
   font-size: 18px;
   font-weight: 500;
 }
+.mobileHeader {
+  display: none;
+}
+@media (max-width: 767px) {
+  .container {
+    display: none;
+  }
+  .mobileHeader {
+    display: block !important;
+  }
+  .mainHeader {
+  box-shadow: none !important;
+}
+}

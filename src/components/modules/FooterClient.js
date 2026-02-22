@@ -5,9 +5,17 @@ import styles from "./FooterClient.module.css";
 function FooterClient() {
   return (
     <div className={styles.footerLogo}>
-      <Image src="/images/logo.png" width={146} height={44} alt="torino logo" />
+      <div className={styles.logo}>
+        <Image
+          src="/images/logo.png"
+          width={146}
+          height={44}
+          alt="torino logo"
+        />
 
-      <p className="vazirFont">تلفن پشتیبانی : 8574-021</p>
+        <p className="vazirFont">تلفن پشتیبانی : 8574-021</p>
+      </div>
+
       <div className={styles.footerClient}>
         <Image
           src="/images/client1.png"
@@ -43,12 +51,7 @@ function FooterClient() {
           height={74}
           alt="torino client logo"
         />
-        <Image
-          src="/images/enamad.png"
-          width={74}
-          height={74}
-          alt="torino client logo"
-        />
+       
       </div>
     </div>
   );

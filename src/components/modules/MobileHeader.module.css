@@ -1,0 +1,18 @@
+.mobileMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+.header button {
+  background-color: transparent;
+  border: none;
+}
+.register button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #28a745;
+  padding: 8px;
+  border-radius: 8px;
+  margin: 4px;
+}

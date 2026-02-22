@@ -15,3 +15,9 @@
     font-weight: 400;
     margin-bottom: 8px;
 }
+
+@media (max-width: 767px){
+    .footerLink{
+        width: 48%;
+    }
+}
