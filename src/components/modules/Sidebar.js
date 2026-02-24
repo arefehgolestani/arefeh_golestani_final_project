@@ -6,10 +6,10 @@ import Link from "next/link";
 function Sidebar() {
   return (
     <div className={styles.sidebar}>
-      <div>
-        <Link href="">
+      <div className={styles.hasBackground}>
+        <Link href="/user/profile">
           <Image
-            src="/images/profile1.png"
+            src="/images/profile.png"
             width={20}
             height={20}
             alt="torino icon"
@@ -19,9 +19,9 @@ function Sidebar() {
       </div>
 
       <div>
-        <Link href="">
+        <Link href="/user/tours">
           <Image
-            src="/images/profile1.png"
+            src="/images/sun-fog.png"
             width={20}
             height={20}
             alt="torino icon"
@@ -30,9 +30,9 @@ function Sidebar() {
         </Link>
       </div>
       <div>
-        <Link href="" className={styles.transaction}>
+        <Link href="/user/transactions" className={styles.transaction}>
           <Image
-            src="/images/profile1.png"
+            src="/images/convert-card.png"
             width={20}
             height={20}
             alt="torino icon"

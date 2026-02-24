@@ -7,14 +7,14 @@ function TourProvider({ children }) {
   const [modal, setModal] = useState(null);
   const [mobile, setMobile] = useState("");
   const [otp, setOtp] = useState("");
-  const [user, setUser] = useState(null);
-  //   const [user, setUser] = useState({
-  //   id: "",
-  //   firstName: "",
-  //   lastName: "",
-  //   mobile: "",
-  //   email: "",
-  // });
+  // const [user, setUser] = useState(null);
+    const [user, setUser] = useState({
+    id: "",
+    firstName: "",
+    lastName: "",
+    mobile: "",
+    email: "",
+  });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAuthChecked, setIsAuthChecked] = useState(false);
    const [showSidebar, setShowSidebar] = useState(false);

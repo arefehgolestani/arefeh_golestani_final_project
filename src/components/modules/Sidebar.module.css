@@ -3,7 +3,7 @@
   height: 170px;
   border-radius: 10px;
   border: 1px solid #00000033;
-  padding: 0 15px;
+
   display: flex;
   flex-direction: column;
 }
@@ -14,11 +14,22 @@
   height: 56px;
   gap: 8px;
   border-bottom: 1px solid #00000033;
+  margin: 0 15px;
 }
-.transaction{
+.transaction {
   border-bottom: none !important;
 }
 .sidebar div p {
   font-size: 15px;
   font-weight: 400;
 }
+.active {
+  color: #28a745 !important;
+}
+
+.hasBackground {
+  background-color: #28a74540;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+

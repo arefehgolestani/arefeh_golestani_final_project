@@ -1,0 +1,82 @@
+.container {
+  padding: 25px;
+  background-color: #f3f3f3;
+}
+.basket {
+  max-width: 1188px;
+  margin: 50px auto 75px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+.userInfo {
+  width: 75%;
+  background-color: #fff;
+  border: 1px solid #00000033;
+  border-radius: 10px;
+  padding: 20px;
+}
+.userInfo img {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.userInfo h3 {
+  font-size: 24px;
+  font-weight: 400;
+}
+.input {
+  padding-top: 12px;
+}
+.tourInfo {
+  width: 25%;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 2px dashed #00000080;
+}
+.name .tour {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000000;
+}
+.name .time {
+  font-size: 16px;
+  font-weight: 400;
+  color: #282828;
+}
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.label {
+  font-size: 16px;
+  font-weight: 400;
+  color: #282828;
+}
+.number {
+  color: #6dc8ed;
+  font-size: 28px;
+  font-weight: 400;
+}
+.basketButton {
+  margin: 5px 20px 15px;
+}
+.tourInfo button {
+  background-color: #28a745;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  border-radius: 10px;
+  padding: 8px;
+
+  width: 100%;
+  height: 56px;
+}

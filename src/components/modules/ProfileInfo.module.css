@@ -1,0 +1,92 @@
+.profile {
+  width: 75% !important;
+}
+.profile .accountInfo,
+.profile .userInfo,
+.profile .bankInfo {
+  border: 1px solid #00000033;
+  border-radius: 10px;
+  width: 100%;
+  width: 100%;
+  padding: 25px;
+  margin: 0 20px 25px;
+}
+.accountInfo p {
+  font-size: 16px;
+  font-weight: 400;
+}
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 10px 5px;
+}
+.info div {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 15px;
+}
+.info button {
+  color: #009eca;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.userInfo .title {
+  display: flex;
+  justify-content: space-between;
+}
+.userInfo .title p {
+  font-size: 16px;
+  font-weight: 400;
+}
+.userInfo .title button {
+  color: #009eca;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.information {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 0 0;
+}
+.information div  {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  margin-top: 15px;
+}
+.information div label , .info div label {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 300;
+  width: 120px;
+}
+.information div span, .info div span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #282828;
+}
+.bankInfo button {
+  color: #009eca;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.bankInfo .title {
+  display: flex;
+  justify-content: space-between;
+}

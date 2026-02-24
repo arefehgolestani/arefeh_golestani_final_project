@@ -18,7 +18,7 @@ async function TourDetailsPage({ params }) {
     cache: "no-store",
   });
   const data = await res.json();
-  console.log(data);
+  
 
   return (
     <div>
