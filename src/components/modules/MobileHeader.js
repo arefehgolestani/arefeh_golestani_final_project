@@ -7,9 +7,16 @@ import MenuSidebar from "./MenuSidebar";
 import TourContext from "@/context/TourContext";
 
 import styles from "./MobileHeader.module.css";
+import DropdownButton from "./DropdownButton";
 
-function MobileHeader() {
-  const { showSidebar, setShowSidebar } = useContext(TourContext);
+function MobileHeader({
+  modalHandler,
+  sendOtpHandler,
+  checkOtpHandler,
+  confirmHandler,
+}) {
+  const { showSidebar, setShowSidebar, isLoggedIn, isAuthChecked } =
+    useContext(TourContext);
 
   const sidebarHandler = () => {
     setShowSidebar((showSidebar) => !showSidebar);
@@ -32,14 +39,18 @@ function MobileHeader() {
         </button>
       </div>
       <div className={styles.register}>
-        <button>
-          <Image
-            src="/images/mobileLogin.png"
-            width={24}
-            height={24}
-            alt="torino logo"
-          />
-        </button>
+        {!isAuthChecked ? null : !isLoggedIn ? (
+          <button onClick={modalHandler}>
+            <Image
+              src="/images/mobileLogin.png"
+              width={24}
+              height={24}
+              alt="torino logo"
+            />
+          </button>
+        ) : (
+          <DropdownButton />
+        )}
       </div>
     </div>
   );

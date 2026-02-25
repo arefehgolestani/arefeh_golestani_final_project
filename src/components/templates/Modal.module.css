@@ -18,7 +18,7 @@
 }
 .modal_content {
   width: 561px;
-  height: 362px;
+  min-height: 250px;
   margin: auto;
   padding: 20px 30px;
   margin-top: 50px;
@@ -79,4 +79,26 @@
   border: none;
   width: 100%;
   display: block !important;
+}
+
+@media (max-width: 767px) {
+  .modal_content {
+    width: 310px;
+    min-height: 280px;
+    padding: 10px;
+  }
+  .modal_content h3 {
+    font-size: 18px;
+  }
+  .modal_content h4 {
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  .modal_content button{
+    height: 46px;
+    padding: 10px 20px;
+    margin: 20px 0 15px;
+  }
 }

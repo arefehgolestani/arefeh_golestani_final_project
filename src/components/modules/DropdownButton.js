@@ -67,7 +67,7 @@ function DropdownButton() {
           height={20}
           alt="login icon"
         />
-        <span className={styles.vazirFont}>{user.mobile}</span>
+        <span className="vazirFont">{user.mobile}</span>
         <Image
           src="/images/arrow-down.png"
           width={20}
@@ -98,7 +98,7 @@ function DropdownButton() {
                 alt="profile icon"
               />
             </div>
-            <Link href="/profile">اطلاعات حساب کاربری</Link>
+            <Link href="/user/profile">اطلاعات حساب کاربری</Link>
           </div>
           <div className={styles.logOut}>
             <div>

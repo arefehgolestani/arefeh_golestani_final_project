@@ -18,3 +18,13 @@
   display: block !important;
   direction: ltr;
 }
+
+@media (max-width: 768px) {
+  .input input {
+    width: 35px !important;
+    height: 40px;
+    padding: 5px;
+    margin: 5px;
+    font-size: 15px;
+  }
+}

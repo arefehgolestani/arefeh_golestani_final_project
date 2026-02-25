@@ -9,9 +9,11 @@ async function UserTours() {
 
   return (
     <div className={styles.userTours}>
-      {!tours.length && <p>موردی برای نمایش وجود ندارد!</p>}
+      {/* {!tours.length && <p>موردی برای نمایش وجود ندارد!</p>}
       {tours.length &&
-        tours.map((tour) => <TourCard key={tour.id} data={tour} />)}
+        tours.map((tour) => <TourCard key={tour.id} data={tour} />)} */}
+
+      <TourCard />
     </div>
   );
 }

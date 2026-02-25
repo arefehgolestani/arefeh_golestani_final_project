@@ -6,7 +6,6 @@
   max-width: 1188px;
   margin: 50px auto 75px;
   background-color: #fff;
-  min-height: 430px;
   border-radius: 10px;
   border: 1px solid #00000033;
   padding: 25px;
@@ -16,10 +15,10 @@
   justify-content: flex-start;
   gap: 20;
 }
-.tourTitle .image {
+.tourTitle .image img {
   border-radius: 12px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
+}
+.tourTitle .image {
   width: 37%;
   height: auto;
 }
@@ -114,9 +113,121 @@
   font-weight: 400;
   color: #000000;
 }
-.divider{
-    width: 1px;
-    height: 84px;
-    border: 1px solid #00000040;
-    margin-top: 30px;
+.divider {
+  width: 1px;
+  height: 84px;
+  border: 1px solid #00000040;
+  margin-top: 30px;
+}
+.visible {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .container {
+    background-color: #fff;
+    padding: 15px;
+  }
+  .details {
+    margin: 0;
+    border: none;
+    padding: 10px 5px;
+  }
+  .image img {
+    width: 330px;
+    height: 220px;
+    border-radius: 12px;
+  }
+  .tourTitle {
+    flex-direction: column;
+  }
+  .tourDesc {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .tourDesc h2 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .tourDesc p {
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .option {
+    gap: 40px;
+    padding-top: 15px;
+  }
+  .option div {
+    gap: 10px;
+  }
+  .option img {
+    width: 14px;
+    height: 14px;
+  }
+  .option div span {
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .tourInfo {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    padding-top: 0px;
+    padding-bottom: 0;
+  }
+  .tourInfo div {
+    background-color: #d8ffe1;
+    border-radius: 10px;
+    width: 48%;
+  }
+  .tourInfo {
+    padding: 25px 0;
+  }
+  .tourInfo div div {
+    padding: 10px !important;
+    gap: 3px;
+    width: 100%;
+  }
+  .tourInfo h5 {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .tourInfo div div span {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .tourInfo img {
+    width: 16px;
+    height: 16px;
+  }
+  .divider {
+    display: none;
+  }
+  .tourPrice {
+    padding-top: 10px;
+    gap: 40px;
+  }
+  .tourPrice button {
+    font-size: 20px;
+    font-weight: 400;
+    width: 154px;
+    height: 42px;
+    padding: 8px;
+    line-height: 30px;
+  }
+  .tourPrice div span {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .visible {
+    display: block !important;
+  }
+  .hidden {
+    display: none;
+  }
 }

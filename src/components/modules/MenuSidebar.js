@@ -23,7 +23,7 @@ function MenuSidebar() {
       <div className={styles.sidebar}>
         <ul>
           <li>
-            <Link href="">
+            <Link href="/">
               <Image
                 src="/images/home-2.png"
                 width={16}

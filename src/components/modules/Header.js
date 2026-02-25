@@ -172,7 +172,7 @@ function Header() {
         </div>
       </div>
       <div className={styles.mobileHeader}>
-         <MobileHeader />
+         <MobileHeader modalHandler={modalHandler} sendOtpHandler={sendOtpHandler} checkOtpHandler={checkOtpHandler} confirmHandler={confirmHandler} />
       </div>
 
       {modal && (

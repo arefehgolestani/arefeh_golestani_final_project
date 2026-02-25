@@ -1,19 +1,4 @@
-@font-face {
-  font-family: Vazir;
-  src: url("../../assets/fonts/vazirfonts/Vazir-Medium-FD-WOL.eot");
-  src:
-    url("../../assets/fonts/vazirfonts/Vazir-Medium-FD-WOL.eot")
-      format("embedded-opentype"),
-    url("../../assets/fonts/vazirfonts/Vazir-Medium-FD-WOL.woff") format("woff"),
-    url("../../assets/fonts/vazirfonts/Vazir-Medium-FD-WOL.woff2")
-      format("woff"),
-    url("../../assets/fonts/vazirfonts/Vazir-Medium-FD-WOL.ttf")
-      format("truetype");
-  font-weight: normal;
-}
-.vazirFont {
-  font-family: Vazir;
-}
+
 .container {
   position: relative;
 }
@@ -73,7 +58,7 @@
   margin: 0 15px;
   border-bottom: 1px solid #0000001f;
 }
-.profile a{
+.profile a {
   font-size: 14px;
   font-weight: 400;
 }
@@ -81,10 +66,41 @@
   height: 50px;
   margin: 0 15px;
 }
-.logOut button{
+.logOut button {
   font-size: 14px !important;
   font-weight: 400 !important;
-  color: #D40000 !important;
+  color: #d40000 !important;
   border: none !important;
   background-color: transparent !important;
+}
+
+@media (max-width: 767px) {
+  .dropdown span {
+    font-size: 12px;
+    font-weight: 300;
+  }
+  .dropdown {
+    width: 130px !important;
+  }
+  .dropdownBox{
+    width: 165px;
+    height: 130px;
+    left: 0;
+  }
+  .dropdownBox div{
+    gap: 8px;
+  }
+  .phoneNumber span{
+    margin-top: 2px;
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .profile a{
+    font-size: 12px;
+  }
+  
+  .logOut button{
+    font-size: 12px !important;
+    width: 100px !important;
+  }
 }

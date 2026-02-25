@@ -1,0 +1,99 @@
+.userTour {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #00000033;
+  margin-bottom: 15px;
+}
+.first {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px 5px;
+}
+.first div img {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.first div span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #000000;
+}
+.first button {
+  width: 89px;
+  height: 20px;
+  line-height: 20px;
+  background-color: #28a7454d;
+  border: none;
+  border-radius: 27px;
+  padding: 2px;
+  margin: 8px;
+  color: #28a745;
+  font-size: 12px;
+  font-weight: 400;
+}
+.second {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20px;
+}
+.second div {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 45%;
+  padding-top: 8px;
+}
+.second h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+}
+.second span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #00000099;
+}
+.divider {
+  width: 100%;
+  border-bottom: 1px solid #00000033;
+  margin: 18px 0 15px;
+}
+.cost {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20px 15px;
+  gap: 25px;
+}
+.divider1 {
+  width: 1px;
+  height: 30px;
+  border-left: 1px solid #00000033;
+}
+.cost div {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+}
+.cost div p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #00000080;
+}
+.cost div h4 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #282828;
+}
+.cost div span {
+  font-size: 10px;
+  font-weight: 300;
+  color: #00000080;
+  margin-right: 2px;
+}
+.yellow {
+  background-color: #d1b9004d !important;
+  color: #d1b900 !important;
+}
