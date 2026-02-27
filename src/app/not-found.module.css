@@ -40,10 +40,16 @@
     width: 100%;
     margin-top: -40px;
   }
-  .text h3 {
-    font-size: 24px;
+  .text h2 {
+    font-size: 36px;
     font-weight: 600;
     margin-bottom: 8px;
+  }
+  .text p {
+    font-size: 24px !important;
+    font-weight: 600;
+    color: #282828;
+    text-align: right;
   }
   .text button {
     width: 232px;

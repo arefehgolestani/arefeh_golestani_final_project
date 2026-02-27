@@ -107,4 +107,5 @@ table tbody tr td button {
   margin: 50px auto;
   display: flex;
   justify-content: space-between;
+  min-height: 320px;
 }

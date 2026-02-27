@@ -10,6 +10,7 @@
   padding: 5px 0;
   height: 74px;
 }
+
 .menu {
   width: 60%;
 }
@@ -52,6 +53,6 @@
     display: block !important;
   }
   .mainHeader {
-  box-shadow: none !important;
-}
+    box-shadow: none !important;
+  }
 }

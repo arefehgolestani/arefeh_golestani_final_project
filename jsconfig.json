@@ -9,6 +9,7 @@
       "@/modules/*": ["src/components/modules/*"],
       "@/templates/*": ["src/components/templates/*"],
       "@/context/*": ["src/context/*"],
+      "@/lib/*": ["./lib/*"],
       "@/services/*": ["src/services/*"]
     }
   }

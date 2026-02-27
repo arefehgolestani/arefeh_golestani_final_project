@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import styles from "./TourDetails.module.css";
-import { formattedDate, calculateDuration } from "../../services/convertDate";
+import { formattedDate, calculateDuration } from "@/services/convertDate";
 
 function TourDetails({ data }) {
   const {

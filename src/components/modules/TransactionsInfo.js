@@ -1,11 +1,12 @@
 import TableRow from "./TableRow";
+import { serverFetch } from "@/lib/serverApi";
+
 import styles from "./TransactionsInfo.module.css";
 
+
+
 async function Transactions() {
-  const res = await fetch("http://localhost:6500/user/transactions", {
-    cache: "no-store",
-  });
-  const transactions = await res.json();
+  const transactions = await serverFetch("/user/transactions");
 
   return (
     <div className={styles.transactions}>

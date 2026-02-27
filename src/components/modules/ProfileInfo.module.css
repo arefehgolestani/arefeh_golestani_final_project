@@ -1,6 +1,9 @@
 .profile {
   width: 75% !important;
 }
+.profile .accountInfo {
+  padding: 20px;
+}
 .profile .accountInfo,
 .profile .userInfo,
 .profile .bankInfo {
@@ -8,7 +11,7 @@
   border-radius: 10px;
   width: 100%;
   width: 100%;
-  padding: 25px;
+
   margin: 0 20px 25px;
 }
 .accountInfo p {
@@ -24,23 +27,33 @@
 .info div {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  margin-top: 15px;
+  /* gap: 20px; */
+  /* margin-top: 10px; */
 }
 .info button {
   color: #009eca;
   border: none;
   background-color: transparent;
-  display: flex;
-  gap: 7px;
+  /* display: flex;
+  gap: 7px; */
   font-size: 14px;
   font-weight: 400;
 }
+.info button img {
+  vertical-align: middle;
+  margin-left: 7px;
+}
+.userInfo {
+  padding: 25px 0 10px;
+}
+
 .userInfo .title {
   display: flex;
   justify-content: space-between;
+  padding: 0 25px;
 }
-.userInfo .title p {
+.userInfo .title p,
+.bankInfo .title p {
   font-size: 16px;
   font-weight: 400;
 }
@@ -57,27 +70,29 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  padding: 10px 0 0;
+  padding: 10px 25px 10px;
 }
-.information div  {
+.information div {
   width: 50%;
   display: flex;
   justify-content: flex-start;
   gap: 30px;
   margin-top: 15px;
 }
-.information div label , .info div label {
+.information div label,
+.info div label {
   color: #000000;
   font-size: 14px;
   font-weight: 300;
   width: 120px;
 }
-.information div span, .info div span {
+.information div span,
+.info div span {
   font-size: 14px;
   font-weight: 600;
   color: #282828;
 }
-.bankInfo button {
+.bankInfo .title button {
   color: #009eca;
   border: none;
   background-color: transparent;
@@ -89,4 +104,8 @@
 .bankInfo .title {
   display: flex;
   justify-content: space-between;
+  padding: 0 25px;
+}
+.bankInfo {
+  padding: 25px 0 10px;
 }

@@ -24,8 +24,6 @@ function MobileHeader({
   return (
     <div
       className={styles.mobileMenu}
-      showSidebar={showSidebar}
-      setShowSidebar={setShowSidebar}
     >
       {showSidebar && <MenuSidebar />}
       <div className={styles.header}>

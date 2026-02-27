@@ -6,7 +6,6 @@ import "./globals.css";
 export const metadata = {
   title: "تورینو | برگزار کننده بهترین تورها",
   description: "برگزارکننده بهترین تورهای ایرانی و خارجی",
-  icons: { icon: "./favicon.ico" },
 };
 
 export default function RootLayout({ children }) {

@@ -1,10 +1,12 @@
-function TableRow({data}) {
+import { formatPersianDateTime } from "@/services/convertDate";
+
+function TableRow({ data }) {
   return (
     <tr key={data.id}>
-      <td>{data.createdAt}</td>
-      <td>{data.amount}</td>
-      <td>{data.type}</td>
-      <td>سفارش : {data.id}</td>
+      <td>{formatPersianDateTime(data.createdAt)}</td>
+      <td>{data.amount.toLocaleString("fa-IR")} </td>
+      <td>{data.type === "Purchase" && "ثبت نام در تور گردشگری"}</td>
+      <td className="vazirFont"> {data.id.split("-", 1)}</td>
     </tr>
   );
 }

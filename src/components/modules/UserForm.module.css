@@ -20,6 +20,7 @@
   top: 23px;
   left: 190px;
 }
+
 .inputs input::placeholder {
   color: #00000080;
   font-size: 14px;

@@ -1,0 +1,68 @@
+.userInput, .button{
+    padding: 0 25px;
+}
+.userInfo input {
+  width: 255px;
+  height: 45px;
+  padding: 8px;
+  margin: 8px 0 8px 22px;
+  border-radius: 5px;
+  border: 1px solid #00000080;
+}
+.userInfo select {
+  width: 255px;
+  height: 45px;
+  padding: 8px;
+  margin: 8px 0 8px 8px;
+  border-radius: 5px;
+  border: 1px solid #00000080;
+  font-size: 14px;
+  font-weight: 400;
+}
+.userInfo label {
+  color: #00000080;
+  font-size: 14px;
+  font-weight: 400;
+  position: absolute;
+  top: 22px;
+  left: 230px;
+}
+.userInfo label img {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.userInput {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.button {
+  text-align: left;
+  border-top: 1px solid #00000033;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+.button .first {
+  width: 145px;
+  height: 44px;
+  border-radius: 5px;
+  padding: 8px;
+  border: 1px solid #28a745;
+  background-color: #28a745;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 5px 10px;
+}
+.button .second {
+  width: 145px;
+  height: 44px;
+  border-radius: 5px;
+  padding: 8px;
+  border: 1px solid #28a745;
+  background-color: #fff;
+  color: #28a745;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 5px 10px;
+}
