@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useContext, useState } from "react";
 
 import TourContext from "@/context/TourContext";
-import EmailInput from "./EmailInput";
+import EmailInput from "./EmailInput.js";
 
 import styles from "./ProfileInfo.module.css";
 import UserInfoInput from "./UserInfoInput";

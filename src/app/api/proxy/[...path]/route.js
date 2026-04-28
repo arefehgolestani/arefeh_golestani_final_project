@@ -24,7 +24,6 @@ async function handler(req, { params }) {
 
   const path = params.path.join("/");
 
-  // body رو فقط یک بار می‌خونیم
   const body =
     req.method !== "GET" && req.method !== "DELETE"
       ? await req.text()
@@ -43,7 +42,6 @@ async function handler(req, { params }) {
 
   let response = await makeRequest(accessToken);
 
-  // اگر 401 شد و refreshToken داشتیم
   if (response.status === 401 && refreshToken) {
     const newTokens = await refreshTokens(refreshToken);
 
@@ -51,7 +49,6 @@ async function handler(req, { params }) {
       const newAccessToken = newTokens.accessToken;
       const newRefreshToken = newTokens.refreshToken;
 
-      // ست کردن کوکی‌های جدید
       cookieStore.set("accessToken", newAccessToken, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
@@ -68,10 +65,8 @@ async function handler(req, { params }) {
         maxAge: 60 * 60 * 24 * 30 * 12, // one year
       });
 
-      // دوباره درخواست قبلی رو با accessToken جدید می‌فرستیم
       response = await makeRequest(newAccessToken);
     } else {
-      // اگر refresh هم ناموفق بود → حذف کوکی‌ها
       cookieStore.set("accessToken", "", { maxAge: 0, path: "/" });
       cookieStore.set("refreshToken", "", { maxAge: 0, path: "/" });
 

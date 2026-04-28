@@ -1,7 +1,15 @@
+"use client";
+
 import Image from "next/image";
+
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
+
+import api from "@/services/config";
 
 import styles from "./TourDetails.module.css";
 import { formattedDate, calculateDuration } from "@/services/convertDate";
+import Link from "next/link";
 
 function TourDetails({ data }) {
   const {
@@ -18,6 +26,16 @@ function TourDetails({ data }) {
   } = data;
 
   const { days, nights } = calculateDuration(data.startDate, data.endDate);
+
+  const router = useRouter();
+
+  const addHandler = async () => {
+    const data = await api.put(`/basket/${id}`);
+    if (data.status === 201) {
+      toast.success(data.data.message);
+      router.push(`/basket/${id}`);
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -191,7 +209,10 @@ function TourDetails({ data }) {
                 <span> {price.toLocaleString("fa-IR")} </span>
                 <p>تومان</p>
               </div>
-              <button>رزرو و خرید</button>
+              <button onClick={addHandler}>
+                {/* <Link href={`/basket/${id}`}>رزرو و خرید</Link> */}
+                رزرو و خرید
+              </button>
             </div>
           </div>
         </div>
@@ -240,38 +261,6 @@ function TourDetails({ data }) {
             <div className={styles.divider}></div>
             <div>
               <div>
-                {/* {fleetVehicle === "bus" && (
-                  <Image
-                    src="/images/bus.png"
-                    width={24}
-                    height={24}
-                    alt="tour image"
-                  />
-                )}
-                {fleetVehicle === "ship" && (
-                  <Image
-                    src="/images/ship.png"
-                    width={24}
-                    height={24}
-                    alt="tour image"
-                  />
-                )}
-                {fleetVehicle === "train" && (
-                  <Image
-                    src="/images/bus1.png"
-                    width={24}
-                    height={24}
-                    alt="tour image"
-                  />
-                )}
-                {fleetVehicle === "airplane" && (
-                  <Image
-                    src="/images/airplane.png"
-                    width={24}
-                    height={24}
-                    alt="tour image"
-                  />
-                )} */}
                 <Image
                   src="/images/bus.png"
                   width={24}

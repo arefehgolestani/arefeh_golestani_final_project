@@ -2,10 +2,15 @@
 
 import { DatePicker } from "zaman";
 import Image from "next/image";
+import { useContext, useState } from "react";
+import TourContext from "@/context/TourContext";
 
 import styles from "./UserForm.module.css";
 
 function UserForm() {
+  const { user } = useContext(TourContext);
+  const fullName = `${user?.firstName} ${user?.lastName}`;
+
   return (
     <div className={styles.inputs}>
       <input type="text" placeholder="نام و نام خانوادگی" />
