@@ -15,7 +15,6 @@ import { sendOtp } from "@/services/EndpointApi";
 import styles from "./Header.module.css";
 import MobileHeader from "./MobileHeader";
 
-
 function Header() {
   const {
     modal,
@@ -30,9 +29,7 @@ function Header() {
     isAuthChecked,
   } = useContext(TourContext);
 
-
-
-  const notify = (code) => toast(`کد تایید شما : ${code}`);
+  const notify = (code) => toast(`کد تایید  : ${code}`);
 
   const modalHandler = () => {
     setModal({
@@ -66,6 +63,7 @@ function Header() {
         cancelText: "انصراف",
         onBack: modalBackHandler,
       });
+      toast.success(res.data.message);
       notify(code);
     } catch (error) {
       console.log(error);
@@ -172,7 +170,12 @@ function Header() {
         </div>
       </div>
       <div className={styles.mobileHeader}>
-         <MobileHeader modalHandler={modalHandler} sendOtpHandler={sendOtpHandler} checkOtpHandler={checkOtpHandler} confirmHandler={confirmHandler} />
+        <MobileHeader
+          modalHandler={modalHandler}
+          sendOtpHandler={sendOtpHandler}
+          checkOtpHandler={checkOtpHandler}
+          confirmHandler={confirmHandler}
+        />
       </div>
 
       {modal && (

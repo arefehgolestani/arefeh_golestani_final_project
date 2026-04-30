@@ -2,7 +2,7 @@ import TourDetails from "@/templates/TourDetails";
 
 export async function generateStaticParams() {
   const res = await fetch("http://localhost:6500/tour", {
-    cache: "no-store",
+    // cache: "no-store",
   });
   const tours = await res.json();
 
@@ -18,7 +18,6 @@ async function TourDetailsPage({ params }) {
     cache: "no-store",
   });
   const data = await res.json();
-  
 
   return (
     <div>

@@ -2,28 +2,60 @@
 
 import Image from "next/image";
 import { calculateDuration } from "@/services/convertDate";
-import {  toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { useContext, useState, useEffect } from "react";
+import { Audio } from "react-loader-spinner";
 
+import TourContext from "@/context/TourContext";
 import api from "@/services/config";
 
 import styles from "./BasketPage.module.css";
 import UserForm from "@/modules/UserForm";
 
-async function BasketDetailPage({ data }) {
-  const { id, title, price } = data;
+function BasketDetailPage({ data }) {
+  const { title, price } = data;
+  const { user } = useContext(TourContext);
+
+  const [formData, setFormData] = useState({
+    fullName: "",
+    nationalCode: "",
+    birthDate: "",
+    gender: "",
+  });
 
   const { days, nights } = calculateDuration(data.startDate, data.endDate);
 
-  const router = useRouter()
+  const router = useRouter();
+
+  if (!user) {
+    toast.error("برای ثبت و خرید نهایی تور ورود به سایت الزامی است!");
+    router.push("/");
+  }
+
+  const fullName = `${user?.firstName} ${user?.lastName}`;
+
+  useEffect(() => {
+    if (user) {
+      setFormData({
+        fullName,
+        nationalCode: user?.nationalCode || "",
+        birthDate: user?.birthDate || "",
+        gender: user?.gender || "",
+      });
+    }
+  }, [user]);
 
   const basketHandler = async () => {
-    // const data = await api.put(`/basket/${id}`);
-    // console.log(data);
-    // if (data.status === 201) {
-    //   toast.success(data.data.message);
-    //   router.push("/");
-    // }
+    try {
+      const res = await api.post(`/order`, formData);
+      if (res.status === 200) {
+        toast.success(res.data.message);
+        router.push("/");
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -39,9 +71,22 @@ async function BasketDetailPage({ data }) {
             />
             مشخصات مسافر
           </h3>
-          <div className={styles.input}>
-            <UserForm />
+          {!user ? (
+        <div className={styles.loading}>
+          <Audio
+          height="50"
+          width="50"
+          color="#28a74540"
+          ariaLabel="audio-loading"
+          wrapperStyle={{}}
+          wrapperClass="wrapper-class"
+          visible={true}
+        />
           </div>
+      ) :  <div className={styles.input}>
+            <UserForm />
+          </div> }
+         
         </div>
         <div className={styles.tourInfo}>
           <div className={styles.name}>

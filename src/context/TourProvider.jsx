@@ -50,15 +50,15 @@ function TourProvider({ children }) {
   //   checkLogin();
   // }, []);
 
-   useEffect(() => {
+  useEffect(() => {
     const checkLogin = async () => {
       try {
         const res = await fetch("/api/proxy/user/profile", {
           cache: "no-store",
+          credentials: "include",
         });
 
         const data = await res.json();
-
 
         if (res.ok && data) {
           setUser(data);
@@ -74,7 +74,6 @@ function TourProvider({ children }) {
         setIsAuthChecked(true);
       }
     };
-
 
     checkLogin();
   }, []);

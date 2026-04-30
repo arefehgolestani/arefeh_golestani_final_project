@@ -10,12 +10,27 @@ import styles from "./UserForm.module.css";
 function UserForm() {
   const { user } = useContext(TourContext);
   const fullName = `${user?.firstName} ${user?.lastName}`;
+  const genderLabel =
+    user?.gender === "male" ? "مرد" : user?.gender === "female" ? "زن" : "-";
+
+
 
   return (
     <div className={styles.inputs}>
-      <input type="text" placeholder="نام و نام خانوادگی" />
-      <input type="text" placeholder="کد ملی" />
-      <label>
+      <input
+        type="text"
+        placeholder="نام و نام خانوادگی"
+        value={fullName}
+        readOnly
+      />
+      <input
+        className="vazirFont"
+        type="text"
+        placeholder="کد ملی"
+        value={`${user?.nationalCode}`}
+        readOnly
+      />
+      {/* <label>
         <Image
           src="/images/calendar-3.png"
           width={16}
@@ -23,13 +38,15 @@ function UserForm() {
           alt="torino logo"
         />
         تاریخ تولد
-      </label>
-      <DatePicker onChange={(e) => console.log(e.value)} />
-      <select name="gender" id="gender">
-        <option value="">جنسیت</option>
-        <option value="male">مرد</option>
-        <option value="female">زن</option>
-      </select>
+      </label> */}
+      {/* <DatePicker onChange={(e) => console.log(e.value)} /> */}
+      <input
+        type="text"
+        placeholder="تاریخ تولد"
+        value={new Date(user?.birthDate).toLocaleDateString("fa-IR")}
+        readOnly
+      />
+      <input type="text" placeholder="جنسیت" value={genderLabel} readOnly />
     </div>
   );
 }

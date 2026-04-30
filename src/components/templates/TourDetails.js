@@ -5,11 +5,14 @@ import Image from "next/image";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 
+import { useContext } from "react";
+import TourContext from "@/context/TourContext";
+
 import api from "@/services/config";
 
 import styles from "./TourDetails.module.css";
 import { formattedDate, calculateDuration } from "@/services/convertDate";
-import Link from "next/link";
+
 
 function TourDetails({ data }) {
   const {
@@ -25,11 +28,16 @@ function TourDetails({ data }) {
     insurance,
   } = data;
 
+  const { user } = useContext(TourContext);
+
   const { days, nights } = calculateDuration(data.startDate, data.endDate);
 
   const router = useRouter();
 
   const addHandler = async () => {
+    if (!user) {
+      toast.error("برای رزرو و خرید تور ورود به سایت الزامی است!");
+    }
     const data = await api.put(`/basket/${id}`);
     if (data.status === 201) {
       toast.success(data.data.message);
@@ -209,10 +217,7 @@ function TourDetails({ data }) {
                 <span> {price.toLocaleString("fa-IR")} </span>
                 <p>تومان</p>
               </div>
-              <button onClick={addHandler}>
-                {/* <Link href={`/basket/${id}`}>رزرو و خرید</Link> */}
-                رزرو و خرید
-              </button>
+              <button onClick={addHandler}>رزرو و خرید</button>
             </div>
           </div>
         </div>

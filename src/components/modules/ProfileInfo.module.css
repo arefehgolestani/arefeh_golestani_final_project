@@ -109,3 +109,9 @@
 .bankInfo {
   padding: 25px 0 10px;
 }
+.loading {
+  margin: 6% 47%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}

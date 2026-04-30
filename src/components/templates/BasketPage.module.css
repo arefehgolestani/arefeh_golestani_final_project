@@ -80,6 +80,12 @@
   width: 100%;
   height: 56px;
 }
+.loading {
+  margin: 6% 47%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
 
 @media (max-width: 767px) {
   .basket {
