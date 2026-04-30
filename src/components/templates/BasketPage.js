@@ -28,11 +28,6 @@ function BasketDetailPage({ data }) {
 
   const router = useRouter();
 
-  if (!user) {
-    toast.error("برای ثبت و خرید نهایی تور ورود به سایت الزامی است!");
-    router.push("/");
-  }
-
   const fullName = `${user?.firstName} ${user?.lastName}`;
 
   useEffect(() => {
@@ -72,21 +67,22 @@ function BasketDetailPage({ data }) {
             مشخصات مسافر
           </h3>
           {!user ? (
-        <div className={styles.loading}>
-          <Audio
-          height="50"
-          width="50"
-          color="#28a74540"
-          ariaLabel="audio-loading"
-          wrapperStyle={{}}
-          wrapperClass="wrapper-class"
-          visible={true}
-        />
-          </div>
-      ) :  <div className={styles.input}>
-            <UserForm />
-          </div> }
-         
+            <div className={styles.loading}>
+              <Audio
+                height="50"
+                width="50"
+                color="#28a74540"
+                ariaLabel="audio-loading"
+                wrapperStyle={{}}
+                wrapperClass="wrapper-class"
+                visible={true}
+              />
+            </div>
+          ) : (
+            <div className={styles.input}>
+              <UserForm />
+            </div>
+          )}
         </div>
         <div className={styles.tourInfo}>
           <div className={styles.name}>
@@ -102,7 +98,7 @@ function BasketDetailPage({ data }) {
               <span className={styles.number}>
                 {price.toLocaleString("fa-IR")}{" "}
               </span>
-              {/* <span>{price.toLocaleString("fa-IR")}</span> */}
+          
               <span>تومان </span>
             </div>
           </div>

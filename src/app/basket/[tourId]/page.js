@@ -1,11 +1,21 @@
+import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
+
 import BasketPage from "@/templates/BasketPage";
 
-// import api from "@/services/config";
 import { serverFetch } from "@/lib/serverApi";
 
 async function Basket({ params }) {
-  const data = await serverFetch(`/tour/${params.tourId}`);
 
+const cookieStore = cookies();
+  const accessToken = cookieStore.get("accessToken")?.value;
+  console.log(accessToken)
+
+  if (!accessToken) {
+     redirect("/");
+  }
+
+  const data = await serverFetch(`/tour/${params.tourId}`);
 
   return (
     <div>
@@ -15,7 +25,6 @@ async function Basket({ params }) {
 }
 
 export default Basket;
-
 
 // import BasketPage from "@/templates/BasketPage";
 
@@ -33,4 +42,3 @@ export default Basket;
 // }
 
 // export default Basket;
-

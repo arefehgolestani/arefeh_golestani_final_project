@@ -1,46 +1,36 @@
 "use client";
 
 import Image from "next/image";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Audio } from "react-loader-spinner";
-import { toast } from "react-toastify";
 
-import TourContext from "@/context/TourContext";
 import EmailInput from "./EmailInput.js";
 
 import styles from "./ProfileInfo.module.css";
 import UserInfoInput from "./UserInfoInput";
 import PaymentInfoInput from "./PaymentInfoInput";
 
-
 function ProfileInfo() {
-  const { user } = useContext(TourContext);
+  const [user, setUser] = useState("");
+
+  useEffect(() => {
+    fetch("/api/auth/user")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.user !== null) {
+          setUser(data.user);
+        }
+      });
+  }, []);
 
   const fullName = `${user?.firstName} ${user?.lastName}`;
 
   const [showEmail, setShowEmail] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showBankInfo, setShowBankInfo] = useState(false);
- 
+
   const genderLabel =
     user?.gender === "male" ? "مرد" : user?.gender === "female" ? "زن" : "-";
-
-
-
-  // useEffect(() => {
-  //   let hasRedirected = false;
-  //   fetch("/api/auth/user")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       if (!hasRedirected && data.user === null) {
-  //         hasRedirected = true;
-  //         toast.error("ورود به سایت الزامی است!");
-  //         router.push("/");
-  //       }
-  //     });
-  // }, []);
-
-
 
   return (
     <div className={styles.profile}>

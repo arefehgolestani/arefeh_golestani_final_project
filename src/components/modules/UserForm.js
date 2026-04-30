@@ -1,19 +1,32 @@
 "use client";
 
-import { DatePicker } from "zaman";
-import Image from "next/image";
-import { useContext, useState } from "react";
-import TourContext from "@/context/TourContext";
+import { useState, useEffect } from "react";
 
 import styles from "./UserForm.module.css";
 
 function UserForm() {
-  const { user } = useContext(TourContext);
-  const fullName = `${user?.firstName} ${user?.lastName}`;
+  const [user, setUser] = useState("");
+
+  useEffect(() => {
+    fetch("/api/auth/user")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.user !== null) {
+          setUser(data.user);
+        }
+      });
+  }, []);
+
+  const fullName = `${user?.firstName || "نام و"} ${user?.lastName || "نام خانوادگی"}`;
+  const nationalCode = `${user?.nationalCode || "کدملی"}  `;
+
   const genderLabel =
-    user?.gender === "male" ? "مرد" : user?.gender === "female" ? "زن" : "-";
-
-
+    user?.gender === "male"
+      ? "مرد"
+      : user?.gender === "female"
+        ? "زن"
+        : "جنسیت";
+  const birthDate = new Date(user?.birthDate).toLocaleDateString("fa-IR");
 
   return (
     <div className={styles.inputs}>
@@ -27,25 +40,10 @@ function UserForm() {
         className="vazirFont"
         type="text"
         placeholder="کد ملی"
-        value={`${user?.nationalCode}`}
+        value={nationalCode}
         readOnly
       />
-      {/* <label>
-        <Image
-          src="/images/calendar-3.png"
-          width={16}
-          height={16}
-          alt="torino logo"
-        />
-        تاریخ تولد
-      </label> */}
-      {/* <DatePicker onChange={(e) => console.log(e.value)} /> */}
-      <input
-        type="text"
-        placeholder="تاریخ تولد"
-        value={new Date(user?.birthDate).toLocaleDateString("fa-IR")}
-        readOnly
-      />
+      <input type="text" placeholder="تاریخ تولد" value={birthDate} readOnly />
       <input type="text" placeholder="جنسیت" value={genderLabel} readOnly />
     </div>
   );
