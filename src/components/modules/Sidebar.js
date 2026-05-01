@@ -7,7 +7,7 @@ function Sidebar() {
   return (
     <div className={styles.sidebar}>
       <div className={styles.hasBackground}>
-        <Link href="/user/profile">
+        <Link href="/profile">
           <Image
             src="/images/profile.png"
             width={20}
@@ -19,7 +19,7 @@ function Sidebar() {
       </div>
 
       <div>
-        <Link href="/user/tours">
+        <Link href="/profile/tours">
           <Image
             src="/images/sun-fog.png"
             width={20}
@@ -30,7 +30,7 @@ function Sidebar() {
         </Link>
       </div>
       <div>
-        <Link href="/user/transactions" className={styles.transaction}>
+        <Link href="/profile/transactions" className={styles.transaction}>
           <Image
             src="/images/convert-card.png"
             width={20}

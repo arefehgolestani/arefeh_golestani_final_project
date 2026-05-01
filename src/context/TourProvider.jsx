@@ -8,47 +8,10 @@ function TourProvider({ children }) {
   const [mobile, setMobile] = useState("");
   const [otp, setOtp] = useState("");
   const [user, setUser] = useState(null);
-  // const [user, setUser] = useState({
-  //   mobile: "",
-  //   email: "",
-  //   firstName: "",
-  //   lastName: "",
-  //   gender: "",
-  //   birthDate: "",
-  //   nationalCode: "",
-  //   payment: {
-  //     shaba_code: "",
-  //     debitCard_code: "",
-  //     accountIdentifier: "",
-  //   },
-  // });
-
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAuthChecked, setIsAuthChecked] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
 
-  // useEffect(() => {
-  //   const checkLogin = async () => {
-  //     try {
-  //       const res = await fetch("/api/auth/user", {
-  //         cache: "no-store",
-  //       });
-
-  //       const data = await res.json();
-
-  //       if (res.ok && data.user) {
-  //         setUser(data.user);
-  //         setIsLoggedIn(true);
-  //       }
-  //     } catch (error) {
-  //       console.log("Not logged in");
-  //     } finally {
-  //       setIsAuthChecked(true);
-  //     }
-  //   };
-
-  //   checkLogin();
-  // }, []);
 
   useEffect(() => {
     const checkLogin = async () => {
@@ -74,7 +37,6 @@ function TourProvider({ children }) {
         setIsAuthChecked(true);
       }
     };
-
     checkLogin();
   }, []);
 

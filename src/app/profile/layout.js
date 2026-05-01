@@ -2,23 +2,16 @@ import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 
 import Sidebar from "@/modules/Sidebar";
-import UserTours from "@/modules/UserTours";
 
-function UserToursPage() {
+function ProfileLayout({ children }) {
   const cookieStore = cookies();
   const accessToken = cookieStore.get("accessToken")?.value;
-  console.log(accessToken);
 
   if (!accessToken) {
     redirect("/");
   }
-  return (
-    <div className="container">
-      <Sidebar />
 
-      <UserTours />
-    </div>
-  );
+  return <div>{children}</div>;
 }
 
-export default UserToursPage;
+export default ProfileLayout;
