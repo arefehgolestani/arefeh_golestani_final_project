@@ -46,7 +46,7 @@ function BasketDetailPage({ data }) {
       const res = await api.post(`/order`, formData);
       if (res.status === 200) {
         toast.success(res.data.message);
-        router.push("/");
+        router.push("/profile/tours");
       }
     } catch (err) {
       console.log(err);

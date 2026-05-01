@@ -21,6 +21,7 @@
     "react-otp-input": "^3.1.1",
     "react-toastify": "^11.0.5",
     "swiper": "^12.1.2",
+    "uuid": "^14.0.0",
     "yup": "^1.7.1",
     "zaman": "^2.1.1"
   },

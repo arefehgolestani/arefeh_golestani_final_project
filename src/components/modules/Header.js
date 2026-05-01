@@ -4,16 +4,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { useContext, useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { usePathname } from "next/navigation";
+import { sendOtp } from "@/services/EndpointApi";
+
 import TourContext from "@/context/TourContext";
 import Modal from "../templates/Modal";
 import LoginForm from "../modules/LoginForm";
 import MobileCodeForm from "./MobileCodeForm";
 import DropdownButton from "./DropdownButton";
 import api from "@/services/config";
-import { sendOtp } from "@/services/EndpointApi";
+import MobileHeader from "./MobileHeader";
 
 import styles from "./Header.module.css";
-import MobileHeader from "./MobileHeader";
 
 function Header() {
   const {
@@ -28,6 +30,15 @@ function Header() {
     setUser,
     isAuthChecked,
   } = useContext(TourContext);
+
+  const pathname = usePathname();
+
+  const headerLinks = [
+    { href: "/", label: "صفحه اصلی" },
+    { href: "/tourservices", label: "خدمات گردشگری" },
+    { href: "/about", label: "درباره ما" },
+    { href: "/contactus", label: "تماس با ما" },
+  ];
 
   const notify = (code) => toast(`کد تایید  : ${code}`);
 
@@ -136,21 +147,27 @@ function Header() {
       </div>
       <div className={styles.container}>
         <div>
-          <Image
-            src="/images/logo.png"
-            width={146}
-            height={44}
-            alt="torino logo"
-          />
+          <Link href="/">
+            <Image
+              src="/images/logo.png"
+              width={146}
+              height={44}
+              alt="torino logo"
+            />
+          </Link>
         </div>
         <div className={styles.menu}>
           <ul>
-            <li className={styles.active}>
-              <Link href="/">صفحه اصلی</Link>
-            </li>
-            <li>خدمات گردشگری</li>
-            <li>درباره ما</li>
-            <li>تماس با ما</li>
+            {headerLinks.map((link) => {
+              const isActive = pathname === link.href;
+              const itemClassName = isActive ? styles.active : "";
+
+              return (
+                <li key={link.href} className={itemClassName}>
+                  <Link href={link.href}>{link.label}</Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
         <div className={styles.loginButton}>

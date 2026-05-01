@@ -87,7 +87,7 @@ function DropdownButton() {
                 alt="profile icon"
               />
             </div>
-            <Link href="/user/profile">اطلاعات حساب کاربری</Link>
+            <Link href="/profile">اطلاعات حساب کاربری</Link>
           </div>
           <div className={styles.logOut}>
             <div>

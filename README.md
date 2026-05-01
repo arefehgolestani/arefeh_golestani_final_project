@@ -8,12 +8,9 @@ It also includes **form validation**, **modals**, and **state management** using
 
 ## 🚀 Demo
 
-
 ---
 
 ## ✨ Features
-
-
 
 ---
 
@@ -33,6 +30,7 @@ It also includes **form validation**, **modals**, and **state management** using
 - React toastify
 - Swiper
 - Zaman
+- Uuid
 
 ---
 

@@ -1,7 +1,7 @@
 .sidebar {
   width: 285px;
   height: 170px;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 1px solid #00000033;
 
   display: flex;
@@ -29,7 +29,7 @@
 
 .hasBackground {
   background-color: #28a74540;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
 }
 
