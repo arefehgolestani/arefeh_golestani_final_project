@@ -17,39 +17,44 @@ function BasketDetailPage({ data }) {
   const { title, price } = data;
   const { user } = useContext(TourContext);
 
-  const [formData, setFormData] = useState({
-    fullName: "",
-    nationalCode: "",
-    birthDate: "",
-    gender: "",
-  });
-
   const { days, nights } = calculateDuration(data.startDate, data.endDate);
 
   const router = useRouter();
 
-  const fullName = `${user?.firstName} ${user?.lastName}`;
-
-  useEffect(() => {
-    if (user) {
-      setFormData({
-        fullName,
-        nationalCode: user?.nationalCode || "",
-        birthDate: user?.birthDate || "",
-        gender: user?.gender || "",
-      });
-    }
-  }, [user]);
 
   const basketHandler = async () => {
+    if (!user) {
+      toast.error("لطفاً ابتدا وارد سایت شوید.");
+      return;
+    }
+    if (
+      !user.firstName ||
+      !user.lastName ||
+      !user.nationalCode ||
+      !user.birthDate ||
+      !user.gender
+    ) {
+      toast.error(
+        " لطفاً اطلاعات خود (نام، کد ملی، تاریخ تولد و جنسیت) را تکمیل نمایید.",
+      );
+      router.push("/profile");
+      return;
+    }
+
     try {
-      const res = await api.post(`/order`, formData);
+      const res = await api.post(`/order`, {
+        fullName: `${user.firstName} ${user.lastName}`,
+        nationalCode: user.nationalCode,
+        birthDate: user.birthDate,
+        gender: user.gender,
+      });
       if (res.status === 200) {
         toast.success(res.data.message);
         router.push("/profile/tours");
       }
     } catch (err) {
       console.log(err);
+      toast.error("خطا در ثبت سفارش. لطفاً مجدداً تلاش کنید.");
     }
   };
 
@@ -98,12 +103,14 @@ function BasketDetailPage({ data }) {
               <span className={styles.number}>
                 {price.toLocaleString("fa-IR")}{" "}
               </span>
-          
+
               <span>تومان </span>
             </div>
           </div>
           <div className={styles.basketButton}>
-            <button onClick={basketHandler}>ثبت و خرید نهایی</button>
+            <button onClick={basketHandler} disabled={!user}>
+              ثبت و خرید نهایی
+            </button>
           </div>
         </div>
       </div>

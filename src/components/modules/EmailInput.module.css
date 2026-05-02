@@ -1,17 +1,22 @@
-.userEmail{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 5px !important;
-    margin-top: 0px !important;
+.userEmail {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px !important;
+  margin-top: 0px !important;
 }
-.userEmail button{
-    width: 122px;
-    height: 45px;
-    color: #fff !important;
-    border-radius: 5px;
-    padding: 8px;
-    background-color: #28A745 !important;
-    border: 1px solid #28A745 !important;
-    text-align: center !important;
+.userEmail button {
+  width: 70px;
+  height: 45px;
+  color: #fff !important;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: #28a745 !important;
+  border: 1px solid #28a745 !important;
+  text-align: center !important;
+}
+.userEmail .second {
+  border: 1px solid #28a745;
+  background-color: #fff !important;
+  color: #28a745 !important;
 }

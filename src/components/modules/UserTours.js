@@ -6,7 +6,9 @@ import { serverFetch } from "@/lib/serverApi";
 import styles from "./UserTours.module.css";
 
 async function UserTours() {
-  const tours = await serverFetch("/user/tours");
+  const tours = await serverFetch("/user/tours" , {
+    cache: "no-store",
+  });
 
   const toursWithIds = tours.map((tour) => ({
     ...tour,
@@ -15,9 +17,12 @@ async function UserTours() {
 
   return (
     <div className={styles.userTours}>
-      {!tours.length && <p>موردی برای نمایش وجود ندارد!</p>}
-      {tours.length &&
-        toursWithIds.map((tour) => <TourCard key={tour._uuid} data={tour} />)}
+
+      {toursWithIds.length > 0 ? (
+        toursWithIds.map((tour) => <TourCard key={tour._uuid} data={tour} />)
+      ) : (
+        <p>موردی برای نمایش وجود ندارد!</p>
+      )}
     </div>
   );
 }

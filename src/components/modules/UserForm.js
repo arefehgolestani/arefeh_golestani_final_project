@@ -16,6 +16,7 @@ function UserForm() {
         }
       });
   }, []);
+  
 
   const fullName = `${user?.firstName || "نام و"} ${user?.lastName || "نام خانوادگی"}`;
   const nationalCode = `${user?.nationalCode || "کدملی"}  `;
@@ -26,7 +27,10 @@ function UserForm() {
       : user?.gender === "female"
         ? "زن"
         : "جنسیت";
-  const birthDate = new Date(user?.birthDate).toLocaleDateString("fa-IR");
+
+  const birthDate = user?.birthDate
+    ? new Date(user.birthDate).toLocaleDateString("fa-IR")
+    : "تاریخ تولد";
 
   return (
     <div className={styles.inputs}>

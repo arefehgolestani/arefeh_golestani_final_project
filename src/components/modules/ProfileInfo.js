@@ -1,27 +1,22 @@
+
+
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Audio } from "react-loader-spinner";
 
+import TourContext from "@/context/TourContext";
 import EmailInput from "./EmailInput.js";
 
 import styles from "./ProfileInfo.module.css";
 import UserInfoInput from "./UserInfoInput";
 import PaymentInfoInput from "./PaymentInfoInput";
 
-function ProfileInfo() {
-  const [user, setUser] = useState("");
 
-  useEffect(() => {
-    fetch("/api/auth/user")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.user !== null) {
-          setUser(data.user);
-        }
-      });
-  }, []);
+function ProfileInfo() {
+  const { user, setUser } = useContext(TourContext);
+
 
   const fullName = `${user?.firstName} ${user?.lastName}`;
 
@@ -53,7 +48,7 @@ function ProfileInfo() {
             <div className={styles.info}>
               <div>
                 <label>شماره موبایل </label>
-                <span className="vazirFont">{user?.mobile} </span>
+                <span className="vazirFont">{user?.mobile}</span>
               </div>
 
               {showEmail ? (
@@ -62,9 +57,10 @@ function ProfileInfo() {
                 <>
                   <div>
                     <label>ایمیل</label>
-                    <span>
-                      {user?.email ? <span>{user.email}</span> : "-"}{" "}
-                    </span>
+                    {/* <span>
+                      {user?.email ? <span>{user.email}</span> : "-"}
+                    </span> */}
+                    {user.email ? <span>{user.email}</span> : "-"}
                   </div>
 
                   <div>
@@ -120,7 +116,7 @@ function ProfileInfo() {
               <div className={styles.information}>
                 <div>
                   <label>نام و نام خانوادگی </label>
-                  <span>{fullName ? <span>{fullName}</span> : "-"} </span>
+                  <span>{user.firstName ? <span>{fullName}</span> : "-"} </span>
                 </div>
                 <div>
                   <label>کد ملی </label>
@@ -146,6 +142,7 @@ function ProfileInfo() {
                     ) : (
                       "-"
                     )}
+                   
                   </span>
                 </div>
               </div>
@@ -178,7 +175,7 @@ function ProfileInfo() {
                 <div>
                   <label>شماره شبا </label>
                   <span className="vazirFont">
-                    {user?.payment.shaba_code ? (
+                    {user?.payment?.shaba_code ? (
                       <span>{user.payment.shaba_code}</span>
                     ) : (
                       "-"
@@ -188,7 +185,7 @@ function ProfileInfo() {
                 <div>
                   <label>شماره کارت </label>
                   <span className="vazirFont">
-                    {user?.payment.debitCard_code ? (
+                    {user?.payment?.debitCard_code ? (
                       <span>{user.payment.debitCard_code}</span>
                     ) : (
                       "-"
@@ -198,7 +195,7 @@ function ProfileInfo() {
                 <div>
                   <label>شماره حساب </label>
                   <span className="vazirFont">
-                    {user?.payment.accountIdentifier ? (
+                    {user?.payment?.accountIdentifier ? (
                       <span>{user.payment.accountIdentifier}</span>
                     ) : (
                       "-"

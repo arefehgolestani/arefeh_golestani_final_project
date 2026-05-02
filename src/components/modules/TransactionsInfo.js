@@ -3,8 +3,6 @@ import { serverFetch } from "@/lib/serverApi";
 
 import styles from "./TransactionsInfo.module.css";
 
-
-
 async function Transactions() {
   const transactions = await serverFetch("/user/transactions");
 
@@ -20,13 +18,14 @@ async function Transactions() {
           </tr>
         </thead>
         <tbody>
-          {!transactions.length && (
+
+          {transactions.length > 0 ? (
+            transactions.map((item) => <TableRow key={item.id} data={item} />)
+          ) : (
             <tr>
               <td colSpan={4}>موردی یافت نشد</td>
             </tr>
           )}
-          {transactions.length &&
-            transactions.map((item) => <TableRow key={item.id} data={item} />)}
         </tbody>
       </table>
     </div>

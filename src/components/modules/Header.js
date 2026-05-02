@@ -108,6 +108,7 @@ function Header() {
 
         setIsLoggedIn(true);
         setModal(null);
+         setOtp("");
         toast.success("ورود به تورینو با موفقیت انجام شد.");
       }
     } catch (error) {

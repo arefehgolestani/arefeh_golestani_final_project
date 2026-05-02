@@ -37,6 +37,7 @@ function TourDetails({ data }) {
   const addHandler = async () => {
     if (!user) {
       toast.error("برای رزرو و خرید تور ورود به سایت الزامی است!");
+      return;
     }
     const data = await api.put(`/basket/${id}`);
     if (data.status === 201) {
