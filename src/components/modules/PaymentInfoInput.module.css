@@ -46,3 +46,17 @@
   font-weight: 600;
   margin: 0 5px 10px;
 }
+
+@media (max-width: 767px) {
+  .button {
+    text-align: center;
+    display: flex;
+  }
+  .paymentInput {
+    padding: 0 15px !important;
+  }
+  .paymentInfo input{
+     width: 285px !important;
+    margin: 8px 0 8px 0px !important;
+  }
+}

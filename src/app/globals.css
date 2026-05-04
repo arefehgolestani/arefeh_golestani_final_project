@@ -109,3 +109,26 @@ table tbody tr td button {
   justify-content: space-between;
   min-height: 320px;
 }
+
+@media (max-width: 767px) {
+  .container {
+    /* min-width: 320px; */
+    margin: 15px auto;
+  }
+  .profileContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    margin: 15px 25px;
+  }
+  table thead tr th {
+    padding: 10px 5px;
+    font-size: 9px;
+  }
+  table tbody tr td {
+    padding: 10px 5px;
+    font-size: 10px;
+  }
+}

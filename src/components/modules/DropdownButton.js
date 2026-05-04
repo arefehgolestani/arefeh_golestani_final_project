@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useContext, useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
+import { Audio } from "react-loader-spinner";
 
 import TourContext from "@/context/TourContext";
 import Image from "next/image";
@@ -49,21 +50,35 @@ function DropdownButton() {
 
   return (
     <div className={styles.container} ref={dropdownRef}>
-      <button className={styles.dropdown} onClick={dropdownHandler}>
-        <Image
-          src="/images/profile.png"
-          width={20}
-          height={20}
-          alt="login icon"
-        />
-        <span className="vazirFont">{user?.mobile}</span>
-        <Image
-          src="/images/arrow-down.png"
-          width={20}
-          height={20}
-          alt="arrow icon"
-        />
-      </button>
+      {!user?.mobile ? (
+        // <Audio
+        //   height="20"
+        //   width="20"
+        //   color="#28a74540"
+        //   ariaLabel="audio-loading"
+        //   wrapperStyle={{}}
+        //   wrapperClass="wrapper-class"
+        //   visible={true}
+        // />
+        <span>....</span>
+      ) : (
+        <button className={styles.dropdown} onClick={dropdownHandler}>
+          <Image
+            src="/images/profile.png"
+            width={20}
+            height={20}
+            alt="login icon"
+          />
+          <span className="vazirFont">{user?.mobile}</span>
+          <Image
+            src="/images/arrow-down.png"
+            width={20}
+            height={20}
+            alt="arrow icon"
+          />
+        </button>
+      )}
+
       {isShow && (
         <div className={styles.dropdownBox}>
           <div className={styles.phoneNumber}>

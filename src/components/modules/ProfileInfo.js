@@ -94,7 +94,7 @@ function ProfileInfo() {
           {showInfo ? (
             <div className={styles.userInfo}>
               <div className={styles.title}>
-                <p>ویرایش اطلاعات</p>
+                <p>ویرایش اطلاعات شخصی</p>
               </div>
 
               <UserInfoInput setShowInfo={setShowInfo} />
@@ -152,7 +152,7 @@ function ProfileInfo() {
           {showBankInfo ? (
             <div className={styles.bankInfo}>
               <div className={styles.title}>
-                <p>ویرایش اطلاعات</p>
+                <p>ویرایش اطلاعات حساب بانکی</p>
               </div>
 
               <PaymentInfoInput setShowBankInfo={setShowBankInfo} />
@@ -168,7 +168,7 @@ function ProfileInfo() {
                     height={16}
                     alt="add email icon"
                   />
-                  ویرایش اطلاعات
+                 ویرایش اطلاعات 
                 </button>
               </div>
               <div className={styles.information}>

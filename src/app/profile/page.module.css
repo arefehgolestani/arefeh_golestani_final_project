@@ -1,0 +1,10 @@
+@media (max-width: 767px) {
+  .profileContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    margin: 10px auto;
+  }
+}

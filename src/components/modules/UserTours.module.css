@@ -9,3 +9,9 @@
     text-align: center;
     padding-top: 20px;
 }
+
+@media (max-width: 767px) {
+    .userTours{
+        width: 100%;
+    }
+}

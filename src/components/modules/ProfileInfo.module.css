@@ -10,8 +10,6 @@
   border: 1px solid #00000033;
   border-radius: 10px;
   width: 100%;
-  width: 100%;
-
   margin: 0 20px 25px;
 }
 .accountInfo p {
@@ -111,7 +109,75 @@
 }
 .loading {
   margin: 6% 47%;
-    text-align: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .accountInfo {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0px 5px;
+  }
+  .info div {
+    justify-content: space-between !important;
+    width: 100%;
+    padding-top: 10px;
+  }
+  .info {
+    align-items: flex-start;
+  }
+  .profile {
+    width: 320px !important;
+  }
+  .profile .accountInfo {
+    padding: 15px;
+  }
+  .information {
+    flex-direction: column;
+  }
+  .userInfo .title {
+    padding: 0 15px 10px !important;
+  }
+  .information {
+    padding: 10px 15px 10px;
+  }
+  .information div {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  .profile .accountInfo,
+  .profile .userInfo,
+  .profile .bankInfo {
+    margin: 0 0 15px;
+  }
+  .bankInfo .title {
+    padding: 0 15px 10px;
+  }
+  .userInfo label{
+    top: 142px !important;
+    left: 215px !important;
+  }
+  .userInfo input{
+    width: 285px !important;
+    margin: 8px 0 8px 0px !important;
+  }
+  .userInfo select{
+    width: 285px !important;
+  }
+  .information div label,
+.info div label {
+  font-size: 13px;
+}
+.information div span,
+.info div span {
+  font-size: 13px;
+}
 }

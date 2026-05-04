@@ -3,7 +3,7 @@ import TransactionsInfo from "@/modules/TransactionsInfo";
 
 async function Transactions() {
   return (
-    <div className="container">
+    <div className="container profileContainer">
       <Sidebar />
       <TransactionsInfo />
     </div>

@@ -3,7 +3,7 @@ import UserTours from "@/modules/UserTours";
 
 function UserToursPage() {
   return (
-    <div className="container">
+    <div className="container profileContainer">
       <Sidebar />
 
       <UserTours />

@@ -97,3 +97,55 @@
   background-color: #d1b9004d !important;
   color: #d1b900 !important;
 }
+
+@media (max-width: 767px) {
+  .first {
+    padding: 10px;
+  }
+  .first div {
+    width: 46%;
+  }
+  .first div span {
+    font-size: 12px;
+  }
+  .first button {
+    width: 83px;
+    border-radius: 20px;
+    padding: 2px;
+    margin: 3px;
+    font-size: 10px;
+  }
+  .second {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 15px;
+    width: 100%;
+  }
+  .second div {
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    padding-top: 8px;
+  }
+  .second span{
+    font-size: 12px;
+  }
+  .second h4{
+    font-size: 13px !important;
+  }
+  .cost {
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 15px 5px;
+    gap: 10px;
+  }
+  .userTour p{
+    padding-top: 0 !important;
+  }
+  .cost div p{
+    font-size: 11px;
+  }
+  .cost div h4{
+    font-size: 10px !important;
+  }
+}
