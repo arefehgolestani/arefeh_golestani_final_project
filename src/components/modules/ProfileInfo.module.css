@@ -161,23 +161,23 @@
   .bankInfo .title {
     padding: 0 15px 10px;
   }
-  .userInfo label{
+  .userInfo label {
     top: 142px !important;
     left: 215px !important;
   }
-  .userInfo input{
+  .userInfo input {
     width: 285px !important;
     margin: 8px 0 8px 0px !important;
   }
-  .userInfo select{
+  .userInfo select {
     width: 285px !important;
   }
   .information div label,
-.info div label {
-  font-size: 13px;
-}
-.information div span,
-.info div span {
-  font-size: 13px;
-}
+  .info div label {
+    font-size: 13px;
+  }
+  .information div span,
+  .info div span {
+    font-size: 13px;
+  }
 }

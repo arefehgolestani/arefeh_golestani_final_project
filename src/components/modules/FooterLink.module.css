@@ -1,23 +1,23 @@
 .footerLink {
   display: flex;
   flex-direction: column;
-   width: 15%;
+  width: 15%;
 }
-.footerLink h3{
-    color: #282828;
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 15px;
+.footerLink h3 {
+  color: #282828;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
-.footerLink a{
-    color: #282828;
-    font-size: 18px;
-    font-weight: 400;
-    margin-bottom: 8px;
+.footerLink a {
+  color: #282828;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 8px;
 }
 
-@media (max-width: 767px){
-    .footerLink{
-        width: 48%;
-    }
+@media (max-width: 767px) {
+  .footerLink {
+    width: 48%;
+  }
 }

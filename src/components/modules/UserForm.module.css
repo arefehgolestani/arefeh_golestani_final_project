@@ -39,7 +39,7 @@
 }
 
 @media (max-width: 767px) {
-  .inputs label{
+  .inputs label {
     top: 155px;
     left: 198px;
   }

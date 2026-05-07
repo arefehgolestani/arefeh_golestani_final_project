@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 
@@ -17,16 +17,16 @@ function Modal({
   return (
     <div className={styles.container}>
       <div className={styles.modal_content}>
-        { (mode === "login" || mode === "logout") && (
-            <span className={styles.close} onClick={onCancel}>
-              <Image
-                src="/images/add.png"
-                width={30}
-                height={30}
-                alt="modal close"
-              />
-            </span>
-          )}
+        {(mode === "login" || mode === "logout") && (
+          <span className={styles.close} onClick={onCancel}>
+            <Image
+              src="/images/add.png"
+              width={30}
+              height={30}
+              alt="modal close"
+            />
+          </span>
+        )}
 
         {mode === "otpCode" && (
           <span className={styles.close} onClick={onBack}>
@@ -40,7 +40,7 @@ function Modal({
         )}
 
         <h3>{title}</h3>
-        <h4>{message}</h4>
+        <h4 className="vazirFont">{message}</h4>
 
         {mode !== "logout" && <>{children}</>}
 

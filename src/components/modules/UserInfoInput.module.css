@@ -1,5 +1,6 @@
-.userInput, .button{
-    padding: 0 25px;
+.userInput,
+.button {
+  padding: 0 25px;
 }
 .userInfo input {
   width: 255px;
@@ -67,10 +68,10 @@
   margin: 0 5px 10px;
 }
 @media (max-width: 767px) {
-  .userInput{
+  .userInput {
     padding: 0 15px;
   }
-  .button{
+  .button {
     text-align: center;
     display: flex;
   }

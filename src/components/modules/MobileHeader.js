@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Image from "next/image";
 
 import MenuSidebar from "./MenuSidebar";
@@ -22,9 +22,7 @@ function MobileHeader({
     setShowSidebar((showSidebar) => !showSidebar);
   };
   return (
-    <div
-      className={styles.mobileMenu}
-    >
+    <div className={styles.mobileMenu}>
       {showSidebar && <MenuSidebar />}
       <div className={styles.header}>
         <button onClick={sidebarHandler}>

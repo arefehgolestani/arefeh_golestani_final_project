@@ -4,7 +4,7 @@ import Image from "next/image";
 import { calculateDuration } from "@/services/convertDate";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import { Audio } from "react-loader-spinner";
 
 import TourContext from "@/context/TourContext";
@@ -20,7 +20,6 @@ function BasketDetailPage({ data }) {
   const { days, nights } = calculateDuration(data.startDate, data.endDate);
 
   const router = useRouter();
-
 
   const basketHandler = async () => {
     if (!user) {

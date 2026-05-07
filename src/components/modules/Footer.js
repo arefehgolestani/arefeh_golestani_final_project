@@ -10,7 +10,6 @@ function Footer() {
     <>
       <div className={styles.container}>
         <div className={styles.footer}>
-          
           <div className={styles.footerBottom}>
             <FooterLink />
             <FooterClient />

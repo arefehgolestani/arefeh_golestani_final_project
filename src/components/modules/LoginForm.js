@@ -54,13 +54,13 @@ function ProductForm({ onSubmitForm, submitRef, defaultValues = {} }) {
         <label>شماره موبایل خود را وارد کنید</label>
         <br />
         <input
+          className="vazirFont"
           type="text"
           placeholder="4253****0912"
           {...register("mobile")}
           name="mobile"
         />
         <p className={styles.error}>{errors["mobile"]?.message}</p>
-        
       </form>
     </div>
   );

@@ -16,7 +16,6 @@ function UserForm() {
         }
       });
   }, []);
-  
 
   const fullName = `${user?.firstName || "نام و"} ${user?.lastName || "نام خانوادگی"}`;
   const nationalCode = `${user?.nationalCode || "کدملی"}  `;

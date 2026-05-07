@@ -6,13 +6,12 @@ import BasketPage from "@/templates/BasketPage";
 import { serverFetch } from "@/lib/serverApi";
 
 async function Basket({ params }) {
-
-const cookieStore = cookies();
+  const cookieStore = cookies();
   const accessToken = cookieStore.get("accessToken")?.value;
-  console.log(accessToken)
+  console.log(accessToken);
 
   if (!accessToken) {
-     redirect("/");
+    redirect("/");
   }
 
   const data = await serverFetch(`/tour/${params.tourId}`);
@@ -25,20 +24,3 @@ const cookieStore = cookies();
 }
 
 export default Basket;
-
-// import BasketPage from "@/templates/BasketPage";
-
-// import api from "@/services/config";
-
-// async function Basket({ params }) {
-//   const data = await api.get(`/tour/${params.tourId}`);
-//   console.log(data)
-
-//   return (
-//     <div>
-//       <BasketPage data={data} />
-//     </div>
-//   );
-// }
-
-// export default Basket;

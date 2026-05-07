@@ -6,7 +6,7 @@ import { serverFetch } from "@/lib/serverApi";
 import styles from "./UserTours.module.css";
 
 async function UserTours() {
-  const tours = await serverFetch("/user/tours" , {
+  const tours = await serverFetch("/user/tours", {
     cache: "no-store",
   });
 
@@ -17,7 +17,6 @@ async function UserTours() {
 
   return (
     <div className={styles.userTours}>
-
       {toursWithIds.length > 0 ? (
         toursWithIds.map((tour) => <TourCard key={tour._uuid} data={tour} />)
       ) : (

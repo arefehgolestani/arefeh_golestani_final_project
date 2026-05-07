@@ -18,7 +18,6 @@ async function Transactions() {
           </tr>
         </thead>
         <tbody>
-
           {transactions.length > 0 ? (
             transactions.map((item) => <TableRow key={item.id} data={item} />)
           ) : (

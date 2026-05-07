@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function TourServices() {
-  return (
-    <div className="container">TourServices</div>
-  )
+  return <div className="container">خدمات گردشگری تورینو ...</div>;
 }
 
-export default TourServices
+export default TourServices;

@@ -82,9 +82,9 @@
 }
 .loading {
   margin: 6% 47%;
-    text-align: center;
-    display: flex;
-    align-items: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 767px) {
@@ -92,11 +92,10 @@
     flex-direction: column;
     margin: 15px auto 30px;
   }
-  .userInfo{
+  .userInfo {
     width: 100%;
   }
-  .tourInfo{
+  .tourInfo {
     width: 100%;
   }
-  
 }

@@ -1,9 +1,7 @@
 import TourDetails from "@/templates/TourDetails";
 
 export async function generateStaticParams() {
-  const res = await fetch("http://localhost:6500/tour", {
-    // cache: "no-store",
-  });
+  const res = await fetch("http://localhost:6500/tour");
   const tours = await res.json();
 
   const params = tours.map((tour) => ({

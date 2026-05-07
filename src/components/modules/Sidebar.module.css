@@ -43,22 +43,20 @@
     justify-content: space-between;
     width: 100%;
   }
-  .sidebar div a{
+  .sidebar div a {
     border-bottom: 0 !important;
     gap: 5px !important;
     margin: 0 10px;
     height: 37px;
   }
-  .sidebar div p{
+  .sidebar div p {
     font-size: 12px;
   }
   .hasBackground {
     background-color: #fff;
-    color: #2BA641;
+    color: #2ba641;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
-    border-bottom: 3px solid #2BA641 !important;
+    border-bottom: 3px solid #2ba641 !important;
+  }
 }
-}
-
-

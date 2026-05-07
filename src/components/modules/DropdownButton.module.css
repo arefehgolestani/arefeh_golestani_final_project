@@ -1,4 +1,3 @@
-
 .container {
   position: relative;
 }
@@ -82,24 +81,24 @@
   .dropdown {
     width: 130px !important;
   }
-  .dropdownBox{
+  .dropdownBox {
     width: 165px;
     height: 130px;
     left: 0;
   }
-  .dropdownBox div{
+  .dropdownBox div {
     gap: 8px;
   }
-  .phoneNumber span{
+  .phoneNumber span {
     margin-top: 2px;
     font-size: 13px;
     font-weight: 400;
   }
-  .profile a{
+  .profile a {
     font-size: 12px;
   }
-  
-  .logOut button{
+
+  .logOut button {
     font-size: 12px !important;
     width: 100px !important;
   }

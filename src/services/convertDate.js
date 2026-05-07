@@ -79,5 +79,5 @@ export {
   calculateDuration,
   formattedDateWithDay,
   getTourStatus,
-  formatPersianDateTime
+  formatPersianDateTime,
 };

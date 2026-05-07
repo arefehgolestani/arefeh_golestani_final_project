@@ -69,7 +69,7 @@ function Header() {
         title: "کد تایید را وارد کنید",
         message: `کد تایید به شماره ${result.mobile} ارسال شد.`,
         mode: "otpCode",
-        children: <MobileCodeForm />,
+        children: <MobileCodeForm sendOtpHandler={sendOtpHandler} />,
         confirmText: "ورود به تورینو",
         cancelText: "انصراف",
         onBack: modalBackHandler,
@@ -108,7 +108,7 @@ function Header() {
 
         setIsLoggedIn(true);
         setModal(null);
-         setOtp("");
+        setOtp("");
         toast.success("ورود به تورینو با موفقیت انجام شد.");
       }
     } catch (error) {

@@ -1,9 +1,8 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 
 import styles from "../app/not-found.module.css";
-import Link from "next/link";
 
 function Error() {
   return (

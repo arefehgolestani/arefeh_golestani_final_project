@@ -6,7 +6,10 @@ import styles from "./FooterClient.module.css";
 function FooterClient() {
   const footerClients = [
     { href: "https://caa.gov.ir/", src: "/images/client1.png" },
-    { href: "https://caa.gov.ir/news-archive/show/rjeqqV", src: "/images/client2.png" },
+    {
+      href: "https://caa.gov.ir/news-archive/show/rjeqqV",
+      src: "/images/client2.png",
+    },
     { href: "https://ecunion.ir/", src: "/images/client3.png" },
     { href: "https://samandehi.ir/", src: "/images/samandehi.png" },
     { href: "https://www.aira.ir/", src: "/images/client4.png" },
@@ -28,7 +31,7 @@ function FooterClient() {
       </div>
 
       <div className={styles.footerClient}>
-         {footerClients.map((client) => {
+        {footerClients.map((client) => {
           return (
             <Link href={client.href} target="_blank">
               <Image
@@ -40,7 +43,6 @@ function FooterClient() {
             </Link>
           );
         })}
-       
       </div>
     </div>
   );

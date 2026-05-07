@@ -17,7 +17,7 @@ function WhyUs() {
         </p>
       </div>
       <div className={styles.sliderImage}>
-         <Image
+        <Image
           src="/images/slider1.png"
           width={386}
           height={416}

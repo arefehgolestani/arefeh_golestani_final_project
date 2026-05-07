@@ -12,7 +12,9 @@ function Banner() {
         alt="torino banner"
       />
       <div className={styles.text}>
-        <h1><span> تورینو </span>برگزارکننده بهترین تورهای داخلی و خارجی </h1>
+        <h1>
+          <span> تورینو </span>برگزارکننده بهترین تورهای داخلی و خارجی{" "}
+        </h1>
       </div>
     </div>
   );

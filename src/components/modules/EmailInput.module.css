@@ -22,8 +22,7 @@
 }
 
 @media (max-width: 767px) {
-   .userEmail button{
-     height: 40px;
-   } 
-   
+  .userEmail button {
+    height: 40px;
+  }
 }

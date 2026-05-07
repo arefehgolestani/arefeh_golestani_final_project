@@ -18,6 +18,15 @@
   display: block !important;
   direction: ltr;
 }
+.input p {
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: 15px;
+}
+.input p span {
+  font-size: 12px;
+  margin-left: 3px;
+}
 
 @media (max-width: 768px) {
   .input input {

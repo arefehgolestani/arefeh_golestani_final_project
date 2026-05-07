@@ -13,7 +13,6 @@ import api from "@/services/config";
 import styles from "./TourDetails.module.css";
 import { formattedDate, calculateDuration } from "@/services/convertDate";
 
-
 function TourDetails({ data }) {
   const {
     id,

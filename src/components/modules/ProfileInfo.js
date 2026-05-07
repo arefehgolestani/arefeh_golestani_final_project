@@ -1,9 +1,7 @@
-
-
 "use client";
 
 import Image from "next/image";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Audio } from "react-loader-spinner";
 
 import TourContext from "@/context/TourContext";
@@ -13,10 +11,8 @@ import styles from "./ProfileInfo.module.css";
 import UserInfoInput from "./UserInfoInput";
 import PaymentInfoInput from "./PaymentInfoInput";
 
-
 function ProfileInfo() {
   const { user, setUser } = useContext(TourContext);
-
 
   const fullName = `${user?.firstName} ${user?.lastName}`;
 
@@ -57,9 +53,7 @@ function ProfileInfo() {
                 <>
                   <div>
                     <label>ایمیل</label>
-                    {/* <span>
-                      {user?.email ? <span>{user.email}</span> : "-"}
-                    </span> */}
+
                     {user.email ? <span>{user.email}</span> : "-"}
                   </div>
 
@@ -142,7 +136,6 @@ function ProfileInfo() {
                     ) : (
                       "-"
                     )}
-                   
                   </span>
                 </div>
               </div>
@@ -168,7 +161,7 @@ function ProfileInfo() {
                     height={16}
                     alt="add email icon"
                   />
-                 ویرایش اطلاعات 
+                  ویرایش اطلاعات
                 </button>
               </div>
               <div className={styles.information}>

@@ -115,7 +115,7 @@
     width: 100%;
     height: 70px;
   }
-  .phone div{
+  .phone div {
     width: 124px;
     justify-content: flex-start;
   }
@@ -124,7 +124,7 @@
     font-weight: 600;
   }
 
-  .phone button{
+  .phone button {
     width: 136px;
     height: 38px;
     font-size: 14px;

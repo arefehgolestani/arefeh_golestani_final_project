@@ -12,7 +12,7 @@ function Card({ data }) {
         <h3>{title}</h3>
         <div className={styles.Info}>
           {options.slice(0, 2).map((item, index) => (
-            <span key={index}> {item}، </span>  
+            <span key={index}> {item}، </span>
           ))}
           <span> ... </span>
         </div>

@@ -43,9 +43,9 @@ function PaymentInfoInput({ setShowBankInfo }) {
   };
 
   const handleCardChange = (e) => {
-    let value = e.target.value.replace(/\D/g, ""); 
+    let value = e.target.value.replace(/\D/g, "");
 
-    value = value.substring(0, 16); 
+    value = value.substring(0, 16);
 
     const formatted = value.match(/.{1,4}/g)?.join("-") || value;
 

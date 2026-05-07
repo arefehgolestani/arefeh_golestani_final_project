@@ -16,7 +16,6 @@ function EmailInput({ setShowEmail }) {
 
   const [email, setEmail] = useState(user.email || "");
 
-
   const emailHandler = async (e) => {
     if (!email) {
       toast.error("وارد کردن ایمیل الزامی میباشد");

@@ -1,7 +1,6 @@
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 
-import Sidebar from "@/modules/Sidebar";
 
 function ProfileLayout({ children }) {
   const cookieStore = cookies();

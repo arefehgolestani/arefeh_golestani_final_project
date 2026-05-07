@@ -3,7 +3,11 @@
 import { useEffect, useState } from "react";
 import TourContext from "./TourContext.jsx";
 
-function TourProvider({ children,  initialIsLoggedIn = false, initialIsAuthChecked = false }) {
+function TourProvider({
+  children,
+  initialIsLoggedIn = false,
+  initialIsAuthChecked = false,
+}) {
   const [modal, setModal] = useState(null);
   const [mobile, setMobile] = useState("");
   const [otp, setOtp] = useState("");
@@ -13,45 +17,18 @@ function TourProvider({ children,  initialIsLoggedIn = false, initialIsAuthCheck
   const [showSidebar, setShowSidebar] = useState(false);
 
   useEffect(() => {
-  if (isLoggedIn) {
-    const fetchUserData = async () => {
-      const response = await fetch("/api/proxy/user/profile");
-      if (response.ok) {
-        const data = await response.json();
-        setUser(data);
-      }
-    };
-    
-    fetchUserData();
-  }
-}, [isLoggedIn]);
+    if (isLoggedIn) {
+      const fetchUserData = async () => {
+        const response = await fetch("/api/proxy/user/profile");
+        if (response.ok) {
+          const data = await response.json();
+          setUser(data);
+        }
+      };
 
-  // useEffect(() => {
-  //   const checkLogin = async () => {
-  //     try {
-  //       const res = await fetch("/api/proxy/user/profile", {
-  //         cache: "no-store",
-  //         credentials: "include",
-  //       });
-
-  //       const data = await res.json();
-
-  //       if (res.ok && data) {
-  //         setUser(data);
-  //         setIsLoggedIn(true);
-  //       } else {
-  //         setUser(null);
-  //         setIsLoggedIn(false);
-  //       }
-  //     } catch (error) {
-  //       setUser(null);
-  //       setIsLoggedIn(false);
-  //     } finally {
-  //       setIsAuthChecked(true);
-  //     }
-  //   };
-  //   checkLogin();
-  // }, []);
+      fetchUserData();
+    }
+  }, [isLoggedIn]);
 
   return (
     <TourContext.Provider
