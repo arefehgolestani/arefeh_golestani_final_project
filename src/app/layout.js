@@ -5,7 +5,7 @@ import yekanFont from "@/utils/fonts";
 import TourProvider from "@/context/TourProvider";
 import "./globals.css";
 
-import { QueryClientProvider } from "@tanstack/react-query";
+
 
 export const metadata = {
   title: "تورینو | برگزار کننده بهترین تورها",
@@ -21,14 +21,14 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
       <body className={yekanFont.className}>
-        {/* <QueryClientProvider> */}
+        
         <TourProvider
           initialIsLoggedIn={initialIsLoggedIn}
           initialIsAuthChecked={true}
         >
           <Layout>{children}</Layout>
         </TourProvider>
-        {/* </QueryClientProvider> */}
+       
       </body>
     </html>
   );

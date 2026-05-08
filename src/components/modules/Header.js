@@ -17,6 +17,7 @@ import MobileHeader from "./MobileHeader";
 
 import styles from "./Header.module.css";
 
+
 function Header() {
   const {
     modal,
@@ -140,6 +141,7 @@ function Header() {
       confirmText: "ارسال کد تایید",
     });
   };
+
 
   return (
     <div className={styles.mainHeader}>

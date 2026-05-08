@@ -276,12 +276,13 @@ function TourDetails({ data }) {
                 <span>حمل و نقل</span>
               </div>
               {fleetVehicle === "ship" && <h5 className="vazirFont">کشتی</h5>}
-              {fleetVehicle === "bus" && <h5 className="vazirFont">اتوبوس</h5>}
+              {fleetVehicle === "Bus" && <h5 className="vazirFont">اتوبوس</h5>}
               {fleetVehicle === "airplane" && (
                 <h5 className="vazirFont">هواپیما</h5>
               )}
               {fleetVehicle === "train" && <h5 className="vazirFont">قطار</h5>}
               {fleetVehicle === "SUV" && <h5 className="vazirFont">SUV</h5>}
+              {fleetVehicle === "Van" && <h5 className="vazirFont">ون</h5>}
             </div>
             <div className={styles.divider}></div>
             <div>
@@ -308,7 +309,7 @@ function TourDetails({ data }) {
                 <span>بیمه</span>
               </div>
               {insurance ? (
-                <h5 className="vazirFont">بیمه 50 هزار دیناری</h5>
+                <h5 className="vazirFont">دارد</h5>
               ) : (
                 <h5>ندارد</h5>
               )}

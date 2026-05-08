@@ -1,20 +1,21 @@
 import Card from "./Card";
 import styles from "./Tours.module.css";
 
-async function Tours() {
-  const res = await fetch("http://localhost:6500/tour", {
-    cache: "no-store",
-  });
-  const tours = await res.json();
+function Tours({ tours }) {
+  const list = Array.isArray(tours) ? tours : [];
 
   return (
     <div className={styles.container}>
       <h3>همه تورها</h3>
-      <div className={styles.tourCard}>
-        {tours.map((tour) => (
-          <Card key={tour.id} data={tour} />
-        ))}
-      </div>
+      {list.length === 0 ? (
+        <p>موردی برای نمایش وجود ندارد</p>
+      ) : (
+        <div className={styles.tourCard}>
+          {list.map((tour) => (
+            <Card key={tour.id} data={tour} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

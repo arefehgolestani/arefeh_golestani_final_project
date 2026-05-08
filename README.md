@@ -88,14 +88,12 @@ src/
 │ ├── profile/  
 │ ├── tour/  
 │ ├── tourServices/  
-│ └── layout.tsx  
 │
 ├── assets/  
 ├── components/
 │ ├── elements/  
 │ ├── layout/  
 │ ├── modules/  
-│ ├── partials/
 │ └── templates/
 │
 ├── context/  
