@@ -26,7 +26,6 @@ The project focuses on creating a smooth and practical booking experience — fr
 - Session persistence using **Refresh Token**
 - Clean and responsive user interface
 - API communication with **Axios**
-- Server state management using **TanStack React Query**
 - Reusable and modular component structure
 - Success and error notifications
 - Persian date handling with **Zaman**
@@ -41,7 +40,6 @@ The project focuses on creating a smooth and practical booking experience — fr
 - JavaScript (ES6+)
 - CSS Modules
 - React Hook Form
-- tanstack/react-query
 - Yup
 - Context API
 - Axios
